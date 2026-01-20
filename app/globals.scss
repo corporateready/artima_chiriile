@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('/fonts/SFProDisplay-Medium.eot');
+    src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
+        // url('SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/SFProDisplay-Medium.woff2') format('woff2'),
+        url('/fonts/SFProDisplay-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('/fonts/SFProDisplay-Bold.eot');
+    src: local('SF Pro Display Bold'), local('SFProDisplay-Bold'),
+        url('/fonts/SFProDisplay-Bold.woff2') format('woff2'),
+        url('/fonts/SFProDisplay-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('/fonts/SFProDisplay-Semibold.eot');
+    src: local('SF Pro Display Semibold'), local('SFProDisplay-Semibold'),
+        url('/fonts/SFProDisplay-Semibold.woff2') format('woff2'),
+        url('/fonts/SFProDisplay-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('/fonts/SFProDisplay-Regular.eot');
+    src: local('SF Pro Display Regular'), local('SFProDisplay-Regular'),
+        url('/fonts/SFProDisplay-Regular.woff2') format('woff2'),
+        url('/fonts/SFProDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+  @apply p-0 m-0 box-border;
+}
+html {
+  font-size: calc(100vw / (1920 * 1));
+  width: 100%;
+  @media screen and (max-width: 1640px) {
+    font-size: calc(100vw / (1440 * 1));
+  }
+
+  @media screen and (max-width: 576px) {
+    font-size: calc(100vw / (414 * 1));
+  }
+}
+body {
+  @apply h-full w-full max-w-full relative top-0 left-0 z-[-1];
+  background: linear-gradient(180deg, #f0f0f0 0%, #fff 100%);
+  .react-tel-input {
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+.react-tel-input .flag-dropdown {
+  @apply w-[65rem] rounded-none;
+  border-radius: 35rem 0 0 35rem !important;
+  
+  @media screen and (max-width: 576px) {
+    @apply p-[5.5vw] w-[60rem];
+  }
+}
+
+.react-tel-input .flag-dropdown .selected-flag {
+  @apply pl-[25rem] ;
+  border-radius: 35rem 0 0 35rem !important;
+}
+
+.react-tel-input .flag-dropdown .selected-flag > div > .arrow {
+  @apply hidden;
+}
+
+.react-tel-input input.form-control {
+  @media screen and (max-width: 600px) {
+    @apply h-[44rem];
+  }
+  @apply bg-none w-full pl-[77rem] h-[56rem];
+
+  @media screen and (min-width: 1640px) {
+    @apply pl-[90rem] ;
+  }
+}
+
+.react-tel-input .form-control {
+  @media screen and (max-width: 600rem) {
+    @apply text-[12rem];
+  }
+}
+
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}

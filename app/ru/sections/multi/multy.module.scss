@@ -1,0 +1,30 @@
+.multi {
+  @apply w-full h-full pt-[80rem] pb-[10rem];
+
+  @media screen and (max-width: 600px) {
+    @apply pt-[65rem] pb-0;
+  }
+}
+.multi_wrapper {
+  @apply w-[1300rem] h-full mx-auto;
+
+  @media screen and (max-width: 600px) {
+    @apply w-full px-[15rem];
+  }
+}
+.multi_title {
+  @apply text-[45rem] font-bold leading-[60rem];
+
+  @media screen and (max-width: 600px) {
+    @apply text-[28rem] leading-[138%];
+  }
+}
+.multi_text__yellow {
+  background: linear-gradient(308deg, #916527 0%, #daa22e 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.multi_text {
+  @apply text-[#231f20];
+}

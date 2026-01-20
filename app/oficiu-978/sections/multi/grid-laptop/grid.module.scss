@@ -1,0 +1,68 @@
+.grid__container {
+  @apply flex gap-[35rem] mt-[100rem] w-full;
+
+  @media screen and (max-width: 600px) {
+    @apply hidden;
+  }
+}
+.grid__item_left {
+  @apply flex flex-col items-center gap-[46rem] bg-white hover:cursor-pointer py-[140rem];
+  border-radius: 100rem 48rem 48rem 100rem;
+  box-shadow: 4rem 4rem 5rem rgba(0, 0, 0, 0.1);
+
+  &:nth-child(1) {
+    @apply w-[475rem] h-auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    @apply p-[28rem] w-full h-[360rem];    
+  }
+}
+.grid__item_title {
+  @apply text-[38rem] text-center text-black font-bold leading-[52rem];
+}
+.grid__item_text {
+  @apply text-[28rem] text-center text-black font-normal leading-[35rem];
+}
+.grid__items_right {
+  @apply w-[747rem] flex flex-col gap-[35rem];
+}
+.grid__item_top {
+  @apply flex justify-center items-center gap-[50rem] bg-white hover:cursor-pointer py-[46rem];
+  border-radius: 48rem 100rem 48rem 48rem; 
+  box-shadow: 4rem 4rem 5rem rgba(0, 0, 0, 0.1);
+}
+.grid__items_top__description {
+  @apply flex flex-col gap-[20rem];
+ .grid__item_title {
+  @apply text-[38rem] text-start text-black font-bold leading-[52rem];
+}
+.grid__item_text {
+  @apply text-[28rem] text-start text-black font-normal leading-[35rem];
+}
+}
+.grid__items_bottom {
+  @apply flex gap-[35rem] h-auto;
+}
+.grid__items_bottom__left {
+  @apply flex flex-col items-center bg-white rounded-[48rem] w-[356rem] h-full pt-[26rem] pb-[36rem];
+  box-shadow: 4rem 4rem 5rem rgba(0, 0, 0, 0.1);
+  .grid__item_title {
+  @apply text-[27rem] text-center text-black font-bold leading-none mt-[32rem];
+}
+.grid__item_text {
+  @apply text-[18rem] text-center text-black font-normal leading-[26rem] mt-[20rem];
+}
+}
+.grid__items_bottom__right {
+  @apply flex flex-col items-center bg-white w-[356rem];
+  border-radius: 48rem 48rem 100rem 48rem;
+  box-shadow: 4rem 4rem 5rem rgba(0, 0, 0, 0.1);
+ @apply flex flex-col items-center bg-white w-[356rem] h-full pt-[26rem] pb-[36rem];
+  .grid__item_title {
+  @apply text-[27rem] text-center text-black font-bold leading-none mt-[32rem];
+}
+.grid__item_text {
+  @apply text-[18rem] text-center text-black font-normal leading-[26rem] mt-[20rem];
+}
+}

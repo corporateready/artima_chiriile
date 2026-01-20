@@ -1,0 +1,122 @@
+.form__overview {
+    @apply w-full h-full fixed top-0 left-0 z-[4];
+    background: rgba(0, 0, 0, 0.3);
+    
+}
+.form__wrapper {
+    @apply absolute top-1/2 left-1/2 z-[5] -translate-x-1/2 -translate-y-1/2 px-[4vw] py-[4.5vw] rounded-[1.1vw];
+    background: rgba(255, 255, 255, 1);
+filter: drop-shadow(4rem 4rem 10rem rgba(0, 0, 0, 0.80));
+    
+    @media screen and ( max-width: 576px) {
+        @apply w-full px-[40px] py-[55px] rounded-none;
+    }
+}
+.form__close_btn {
+    @apply w-[1.52vw] h-[1.52vw] absolute top-[1vw] right-[1vw];
+
+    @media screen and ( max-width: 576px ) {
+        @apply w-[20px] h-[20px] top-[15px] right-[10px];
+    }
+   
+}
+.form__progress {
+    @apply w-[44vw] h-[1.8vw] bg-[#F0F0F0] rounded-full relative top-0 left-0 z-[1] overflow-hidden ;
+
+     @media screen and ( max-width: 576px) {
+        @apply w-full ;
+    }
+}
+.form__progress_line {
+    @apply w-full h-[1.2vw] relative top-1/2 -translate-y-1/2 left-0 z-10 block;
+
+    @media screen and (max-width: 576px) {
+        @apply h-[12px];
+    }
+}
+.form__progress_count__wrap {
+    @apply absolute top-[5vw] left-[-1.3vw];
+
+    @media screen and ( max-width: 576px ) {
+        @apply absolute top-[13vw] left-[-6vw];
+    }
+}
+.form__progress_count__count_inner {
+    @apply absolute top-[-3.4vw] left-[25.5vw] z-[5];
+    
+@media screen and (max-width: 576px) {
+    @apply absolute top-[-7.5vw] left-[53vw] z-[5];
+}
+
+}
+.form__progress_count__bg {
+    @apply w-[4vw] h-[3vw] relative top-0 left-0;
+  @media screen and (max-width: 576px) {
+    @apply w-[47px] h-[29px];
+  }
+}
+.form__progress_count__number {
+    @apply absolute top-1/4 -translate-y-1/4 left-1/2 -translate-x-1/2 z-[6] text-[1.4vw] text-[#fff] font-bold;
+    @media screen and ( max-width: 576px) {
+        @apply text-[3.2vw];
+    }
+}
+.form__title {
+    @apply text-[#000] text-[1.68vw] font-bold uppercase text-center leading-[173%] mt-[1.2vw];
+
+    @media screen and ( max-width: 576px) {
+        @apply text-[3.2vw] mt-[6vw];
+    }
+}
+.form__inner {
+    @apply w-[34.7vw] flex flex-col gap-[1.2vw] mx-auto mt-[1.2vw];
+
+    @media screen and ( max-width: 576px) {
+        @apply w-full gap-[6vw] mt-[6vw];
+    }
+
+    input {
+        @apply w-full text-[1.6vw] text-[#000] border-[0.1vw] border-[#C4C4C4] rounded-[0.6vw] px-[1.7vw] py-[0.8vw] focus:outline-none;
+
+        @media screen and ( max-width: 576px) {
+        @apply text-[5vw] rounded-[1vw] px-[4vw] py-[2vw];
+    }
+        &::placeholder {
+            @apply text-[1.6vw] text-[#979794] font-normal;
+            @media screen and ( max-width: 576px) {
+        @apply text-[5vw] rounded-[1vw];
+    }
+        }
+    }
+     .input {
+        @apply w-full text-[1.6vw] text-[#000] border-[0.1vw] rounded-[0.6vw] border-[#C4C4C4] focus:outline-none;
+
+        @media screen and ( max-width: 576px) {
+        @apply text-[5vw] rounded-[1vw]  py-[1.8vw];
+    }
+
+        input {
+        @apply w-full text-[1.5vw] border-0 border-[#C4C4C4] rounded-[0.6vw] px-[80rem] sm:px-[5vw] py-[80rem] sm:py-[2.2vw] focus:outline-none;
+
+       @media screen and ( max-width: 576px) {
+        @apply text-[5vw] rounded-[1vw] py-[2vw];
+    }
+
+        &::placeholder {
+            @apply text-[1.6vw] text-[#979794] font-normal;
+        }
+    }
+
+        &::placeholder {
+            @apply text-[1.6vw] text-[#979794] font-normal;
+        }
+    }
+    button {
+        @apply w-full text-[1.91vw] text-[#000] font-bold border-none rounded-[0.6vw] px-0 py-[1.1vw] bg-[#FFC231] uppercase disabled:hover:bg-[#FFC231] sm:hover:bg-[#fed26a] transition-all duration-150;
+        box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.25);
+
+        @media screen and ( max-width: 576px) {
+        @apply text-[5vw] rounded-[1vw] py-[2vw];
+    }
+    }
+}

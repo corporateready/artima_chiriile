@@ -1,0 +1,186 @@
+.home__main {
+    @apply absolute top-0 left-0 min-h-[100dvh] h-full w-full;
+}
+.home__section__bg_shadow {
+    @apply w-[73%] h-full absolute bottom-0 left-0 z-[1] bg-no-repeat object-cover;
+    background-image: linear-gradient(90deg, rgba(23, 32, 18, 0.6), rgba(23, 32, 18, 0));
+
+    @media screen and (max-width: 576px) {
+        @apply w-[100%] h-[60%] absolute bottom-0 left-0;
+        background-image: linear-gradient(0deg, rgba(23, 32, 18, 0.6), rgba(23, 32, 18, 0));
+    }
+}
+.home__section__bg_shadow__up {
+    @apply w-[64%] h-full absolute bottom-0 left-0 z-[1] bg-no-repeat object-cover;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(23, 32, 18, 0));
+
+    @media screen and (max-width: 576px) {
+        @apply w-[100%] h-[50%] absolute bottom-0 left-0;
+        background-image: linear-gradient(0deg, rgba(23, 32, 18, 0.5), rgba(23, 32, 18, 0));
+    }
+}
+.home__content {
+
+    @apply absolute top-0 bg-[url('../../../public/artima-home-bg-mob.webp')] sm:bg-[url('../../../public/rendor-4.png')] bg-right-top sm:bg-center left-0 w-full min-h-[100dvh] bg-no-repeat bg-cover;
+    
+    @media all and (max-width: 576px) and (orientation:portrait) {
+    background-position-y: -80rem;
+    }
+}
+.container {
+   @media screen and (min-width: 576px)  {
+        @apply relative top-0 left-0 max-w-full mx-auto w-[1100rem];
+    }
+
+    @media screen and (min-width: 1640px)  {
+        @apply relative top-0 left-0 max-w-full mx-auto w-[1218rem];
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply w-full h-full px-[15rem] flex flex-col justify-start;
+    }
+}
+.home__title {
+    @apply text-[56rem] text-white font-extrabold leading-[70rem] uppercase relative mt-[280rem] z-[2];
+        text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.8);
+
+     @media screen and (min-width: 1640px) {
+    @apply text-[58rem] mt-[400rem];
+  }
+
+    @media screen and (max-width: 576px) {
+        @apply text-[27rem] leading-[40rem] mt-[420rem];
+    }
+
+    &_span {
+        @media screen and (max-width: 576px) {
+            @apply hidden;
+        }
+    }
+}
+.home__subtitle {
+        @apply text-[21rem] mt-[15rem] text-white font-extrabold leading-[26rem] uppercase relative z-[2];
+
+    text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.8);
+
+   @media screen and (min-width: 1640px) {
+    @apply text-[24rem];
+  }
+
+    @media screen and (max-width: 576px) {
+        @apply text-[20rem] font-semibold mt-[7rem] normal-case leading-[24rem];
+        letter-spacing: 1%;
+    }
+}
+.home__title_ru {
+        @apply text-[40rem] text-white font-extrabold leading-[60rem] uppercase relative mt-[280rem] z-[2];
+    text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.8);
+
+     @media screen and (min-width: 1640px) {
+    @apply text-[52rem] mt-[400rem] leading-[70rem];
+  }
+
+    @media screen and (max-width: 576px) {
+        @apply text-[25rem] leading-[35rem] mt-[410rem];
+    }
+}
+.home__subtitle_ru {
+        @apply text-[22rem] mt-[15rem] text-white font-extrabold leading-[27rem] uppercase relative z-[2];
+
+    text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.8);
+
+    &__span {
+        @apply text-[#F6B61C];
+    }
+
+   @media screen and (min-width: 1640px) {
+    @apply text-[24rem] leading-[30rem];
+  }
+
+    @media screen and (max-width: 576px) {
+        @apply text-[20rem] font-semibold mt-[5rem] normal-case leading-[25rem];
+        letter-spacing: 1%;
+    }
+}
+.home__PDF_btn {
+    @apply w-[500rem] h-[54rem] text-[23rem] rounded-[6rem] uppercase mt-[50rem] bg-[#FFC231] flex text-[#363636] font-bold justify-center items-center relative top-0 left-0 z-[2] sm:hover:bg-[#fed26a];
+    box-shadow: 2rem 2rem 10rem rgba(0, 0, 0, 0.9);
+
+     @media screen and (min-width: 1200px) {
+    @apply text-[23rem] w-[500rem] h-[61rem] mt-[26rem] rounded-[6rem];
+  }
+
+    @media screen and (min-width: 1640px) {
+    @apply text-[28rem] w-[555rem] h-[73rem] mt-[34rem] rounded-[11rem];
+  }
+
+    @media screen and (max-width: 576px) {
+        @apply w-full h-[60rem] text-[20rem] mt-[20rem] rounded-[6rem];
+    }
+}
+.bottom__text {
+    @apply text-[0.84vw] w-full text-center text-white font-medium absolute bottom-[9%] -translate-x-1/2 left-1/2 z-[1];
+
+    a {
+        @apply text-white relative hover:text-slate-200 transition-all duration-200 underline;
+    }
+    @media screen and (max-width: 576px) {
+         @apply hidden;
+    }
+}
+.bottom__text_address {
+    @apply text-[0.84vw] w-full text-center text-white font-medium absolute bottom-[6%] -translate-x-1/2 left-1/2 z-[1];
+
+    a {
+        @apply text-white relative hover:text-slate-200 transition-all duration-200 underline;
+    }
+    @media screen and (max-width: 576px) {
+         @apply hidden;
+    }
+}
+.bottom__links {
+    @apply text-[0.84vw] w-full flex justify-center gap-[100rem] text-white font-medium absolute bottom-[3%] -translate-x-1/2 left-1/2 z-[1];
+
+    a {
+        @apply text-white relative hover:text-slate-300 transition-all duration-200;
+    }
+    @media screen and (max-width: 576px) {
+         @apply hidden;
+    }
+}
+.bottom__text_mob {
+    @apply hidden;
+
+    a {
+        @apply text-white relative inline-block;
+
+        @media screen and (max-width: 576px) {
+            @apply ml-[2rem] underline;
+        }
+    }
+    @media screen and (max-width: 576px) {
+         @apply inline-flex justify-center text-[7.9rem] w-full text-center text-white font-medium mt-[22rem] relative z-[1];
+    }
+}
+.bottom__text_mob__address {
+    @apply hidden;
+
+
+    @media screen and (max-width: 576px) {
+         @apply inline-flex justify-center text-[7.9rem] w-full text-center text-white font-medium mt-[8rem] relative z-[1];
+    }
+}
+.bottom__links_mob {
+    @apply hidden;
+
+    a {
+        @apply text-white relative inline-block;
+
+        @media screen and (max-width: 576px) {
+            @apply ml-[2rem];
+        }
+    }
+    @media screen and (max-width: 576px) {
+         @apply inline-flex justify-center gap-[40rem] text-[9.5rem] w-full text-center text-white font-medium mt-[8rem] relative z-[1];
+    }
+}

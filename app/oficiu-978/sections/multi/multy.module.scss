@@ -1,0 +1,62 @@
+.multi {
+  @apply w-full h-full py-[90rem];
+
+  @media screen and (max-width: 600px) {
+    @apply pt-[45rem] pb-0;
+  }
+}
+.multi_wrapper {
+  @apply w-[1260rem] h-full mx-auto;
+
+  @media screen and (max-width: 600px) {
+    @apply w-screen px-[15rem];
+  }
+}
+.multi_title {
+  @apply text-[45rem] font-bold leading-[133%];
+
+  @media screen and (max-width: 600px) {
+    @apply text-[28rem] leading-[138%];
+  }
+}
+.multi_text__yellow {
+  background: linear-gradient(308deg, #916527 0%, #daa22e 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.multi_text {
+  @apply text-[#231f20];
+}
+.multi_carousel {
+  @apply py-[90rem] flex;
+
+  @media screen and (max-width: 600px) {
+    @apply py-[45rem];
+  }
+}
+.multi_carousel__wrapper {
+  @apply block relative w-full;
+
+  // @media screen and (max-width: 600px) {
+  //   @apply absolute top-[-1000rem] left-[1000];
+  // }
+}
+.multi_carousel__wrapper_mobile {
+  @apply hidden;
+
+  @media screen and (max-width: 600px) {
+    @apply block;
+  }
+}
+// .grid__container {
+//   padding-top: 90rem;
+//  display: grid;
+//  grid-template-areas: "item__1 item__2";
+//   grid-template-rows: 680rem 1fr;
+//   grid-template-columns: 475rem 1fr;
+//   grid-gap: 35rem;
+//   height: 100vh;
+//   width: 100%;
+//   margin: 0;
+// }

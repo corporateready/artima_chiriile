@@ -1,0 +1,7 @@
+.line_body {
+    @apply w-[340rem] h-[14rem] absolute top-[50%] left-[-110rem] translate-y-[-50%] rounded-full;
+
+    @media(max-width: 576px) {
+        @apply w-[220rem] left-[-32rem];
+    }
+}

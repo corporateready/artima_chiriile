@@ -1,0 +1,95 @@
+.form__overview {
+    @apply w-full h-full fixed top-0 left-0 z-[4];
+        background: rgba(61, 61, 61, 0.5);
+        backdrop-filter: blur(4px);    
+}
+.form__wrapper {
+    @apply w-[644rem] absolute top-1/2 left-1/2 z-[6] -translate-x-1/2 -translate-y-1/2 pt-[76rem] rounded-[10rem];
+    background: rgba(255, 255, 255, 1);
+    filter: drop-shadow(4rem 4rem 10rem rgba(0, 0, 0, 0.80));
+
+      @media screen and (max-width: 1440px) and ( max-height: 780px) {
+        @apply scale-[80%];
+    }
+    
+    @media screen and ( max-width: 576px) {
+        @apply w-[386rem] py-0 pt-[48rem] px-0 rounded-[10rem] scale-[100%];
+    }
+}
+.form__close_btn {
+    @apply w-[20rem] h-[20rem] absolute top-[40rem] right-[48rem];
+
+    @media screen and ( max-width: 576px ) {
+        @apply w-[20px] h-[20px] top-[-60rem] right-[10rem];
+    }
+   
+}
+.form__progress {
+    @apply w-[454rem] h-[16rem] mx-auto bg-[#F0F0F0] rounded-full relative top-0 left-0 z-[1] overflow-hidden ;
+
+     @media screen and ( max-width: 576px) {
+        @apply w-[366rem] h-[16px];
+    }
+}
+.form__progress_line {
+    @apply w-full h-full relative top-[35%] -translate-y-1/2 left-0 z-10 block;
+
+    animation: line-progress 2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+
+    @keyframes line-progress {
+        0% {left: -210rem;}
+        100% {left: 0;}
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply h-[12px];
+
+        animation: line-progress 2s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+
+    @keyframes line-progress {
+        0% {left: -210rem;}
+        100% {left: 100;}
+    }
+    }
+}
+.form__progress_count__wrap {
+    @apply absolute top-[40rem] left-0;
+
+    @media screen and ( max-width: 576px ) {
+        @apply absolute top-[18rem] left-[-5.5vw];
+    }
+}
+.form__progress_count__count_inner {
+    @apply absolute top-0 left-0 z-[5];
+    
+@media screen and (max-width: 576px) {
+    @apply absolute top-[-7.5vw] left-[53vw] z-[5];
+}
+
+}
+.form__progress_count__bg {
+    @apply w-[40rem] h-[28rem] relative top-0 left-0;
+  @media screen and (max-width: 576px) {
+    @apply w-[32px] h-[22px];
+  }
+}
+.form__progress_count__number {
+    @apply absolute top-1/4 -translate-y-1/4 left-1/2 -translate-x-1/2 z-[6] text-[11rem] text-[#fff] font-bold;
+    @media screen and ( max-width: 576px) {
+        @apply text-[9rem];
+    }
+}
+.form__title {
+    @apply text-[#000] text-[25rem] font-bold uppercase text-center leading-[173%] mt-[22rem];
+
+    @media screen and ( max-width: 576px) {
+        @apply mt-[6vw] text-[18rem];
+    }
+}
+.form__title_ru {
+    @apply text-[#000] text-[24rem] font-bold text-center leading-[40rem] mt-[54rem];
+
+    @media screen and ( max-width: 576px) {
+        @apply mt-[41rem] text-[19rem] leading-[30rem];
+    }
+}

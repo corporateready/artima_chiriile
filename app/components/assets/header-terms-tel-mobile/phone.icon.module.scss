@@ -1,0 +1,8 @@
+.tel__icon {
+    @apply hidden;
+    @media screen and ( max-width: 576px) {
+        @apply block w-[24px] h-[24px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+        // text-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.7);
+
+    }
+}

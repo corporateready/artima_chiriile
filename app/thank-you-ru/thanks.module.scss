@@ -1,0 +1,58 @@
+.thanks {
+  @apply flex flex-col justify-between h-auto w-full;
+font-family: 'SF Pro Display', sans-serif;
+}
+
+.thanks__title {
+  @apply text-[70rem] font-bold text-center leading-normal mt-[90rem];
+
+  background: linear-gradient(50deg, #916527 0%, #daa22e 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media screen and (max-width: 600px) {
+    @apply text-[40rem] mt-[50rem];
+  }
+}
+
+.thanks__subtitle {
+  @apply text-[30rem] text-center text-[#231f20] font-bold mt-[10rem] leading-[124%];
+
+  @media screen and (max-width: 600px) {
+    @apply text-[25rem] mt-[16rem];
+  }
+}
+.thanks__video_title {
+  @apply text-[45rem] font-bold leading-[124%] text-center mt-[90rem];
+
+background: linear-gradient(101deg, #916527 0%, #daa22e 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+@media screen and (max-width: 600px) {
+  @apply text-[28rem] mt-[50rem];
+}
+}
+.thanks__video {
+  @apply w-[968rem] h-[548rem] mx-auto mt-[50rem] relative top-0 left-0 z-0;
+
+  @media screen and (max-width: 600px) {
+    @apply w-full h-[236rem] mt-[40rem];
+  }
+}
+.thanks__video_text {
+  @apply text-[45rem] leading-[124%] mt-[90rem] font-bold text-black text-center;
+
+  @media screen and (max-width: 600px) {
+    @apply text-[28rem] mt-[46rem];
+  }
+}
+.thanks__programming_title {
+  @apply text-[30rem] text-[#231f20] font-bold text-center leading-normal mt-[30rem] mb-[40rem];
+
+  @media screen and (max-width:600px) {
+    @apply text-[19rem] mt-[16rem] mb-[50rem];
+  }
+}

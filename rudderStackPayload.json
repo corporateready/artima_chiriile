@@ -1,0 +1,75 @@
+{
+    "anonymousId": "af13495e-cc4f-4ad6-a572-a50312423a52",
+    "channel": "web",
+    "context": {
+        "app": {
+            "installType": "npm",
+            "name": "RudderLabs JavaScript SDK",
+            "namespace": "com.rudderlabs.javascript",
+            "version": "3.11.17"
+        },
+        "campaign": {
+            "content": "test_utm_content_3",
+            "medium": "display_ads",
+            "name": "test_campaign_artima_277",
+            "source": "google"
+        },
+        "library": {
+            "name": "RudderLabs JavaScript SDK",
+            "snippetVersion": "3.0.14",
+            "version": "3.11.17"
+        },
+        "locale": "en",
+        "os": {
+            "name": "",
+            "version": ""
+        },
+        "page": {
+            "initial_referrer": "$direct",
+            "initial_referring_domain": "",
+            "path": "/",
+            "referrer": "$direct",
+            "referring_domain": "",
+            "search": "?utm_source=google&utm_medium=display_ads&utm_campaign=test_campaign_artima_277&utm_content=test_utm_content_3",
+            "tab_url": "https://artima.md/?utm_source=google&utm_medium=display_ads&utm_campaign=test_campaign_artima_277&utm_content=test_utm_content_3",
+            "title": "Oficii spre chirie ARTIMA Business & Lifestyle",
+            "url": "https://artima.md/?utm_source=google&utm_medium=display_ads&utm_campaign=test_campaign_artima_277&utm_content=test_utm_content_3"
+        },
+        "screen": {
+            "density": 1.25,
+            "height": 864,
+            "innerHeight": 703,
+            "innerWidth": 1536,
+            "width": 1536
+        },
+        "sessionId": 1738046575718,
+        "sessionStart": true,
+        "timezone": "GMT+0200",
+        "traits": {
+            "action_type": "click",
+            "domain_source": "artima.md",
+            "element_location": "bottom_form",
+            "element_text": "trimite",
+            "element_type": "button",
+            "email": "test1@gmail.com",
+            "form_location": "hero",
+            "form_name": "descarca_prezentare_pdf_ro",
+            "form_type": "click_form",
+            "location": "Ceadîr-Lunga",
+            "name": "Test1",
+            "phone": "37398765321"
+        },
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+    },
+    "integrations": {
+        "All": true
+    },
+    "messageId": "f340b57c-3b85-4c2e-98c9-95718fb1ac3e",
+    "originalTimestamp": "2025-01-28T06:43:18.245Z",
+    "receivedAt": "2025-01-28T06:57:05.594Z",
+    "request_ip": "178.168.86.195",
+    "rudderId": "d4906f1c-9850-4981-adf0-afa933d180c4",
+    "sentAt": "2025-01-28T06:43:18.246Z",
+    "type": "identify",
+    "userId": "form_submitted"
+}

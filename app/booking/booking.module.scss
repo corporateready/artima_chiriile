@@ -1,0 +1,7 @@
+.booking_header__wrapper {
+  @apply w-[1300rem] h-full mx-auto;
+
+  @media screen and (max-width: 600px) {
+    @apply w-full px-[14rem];
+  }
+}

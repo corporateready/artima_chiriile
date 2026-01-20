@@ -1,0 +1,41 @@
+.grid__container {
+  @apply hidden;
+  @media screen and (max-width: 600px) {
+    @apply w-full h-[382rem] flex justify-between gap-[20rem] mt-[49rem];
+  }
+}
+.grid__item_1 {
+  @apply w-[143rem] h-[143rem] bg-white rounded-[49rem]  absolute top-0 left-0 text-center z-[1];
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  .grid__item_title {
+    @apply text-[17rem] font-bold mt-[10rem] leading-[22rem];
+  }
+}
+.grid__item_2 {
+  @apply w-[222rem] h-[222rem] bg-white rounded-[49rem]  absolute top-0 right-0 z-[1];
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+   .grid__item_title {
+    @apply text-[17rem] font-bold mt-[10rem] ml-[30rem] leading-[22rem];
+  }
+  .grid__item_text {
+    @apply text-[14rem] font-normal mt-[10rem] ml-[28rem] leading-[18rem];
+  }
+}
+.grid__item_3 {
+  @apply w-[222rem] h-[222rem] bg-[url('/sales/grid-bg/grid-item-3-mobile.png')] bg-no-repeat bg-cover absolute bottom-0 left-0 z-[0];
+  
+   .grid__item_title {
+    @apply text-[17rem] font-bold mt-[10rem] ml-[20rem] leading-[22rem];
+  }
+  .grid__item_text {
+    @apply text-[14rem] font-normal mt-[10rem] ml-[20rem] leading-[18rem];
+  }
+}
+.grid__item_4 {
+  @apply w-[143rem] h-[143rem] bg-white rounded-[49rem] absolute bottom-0 right-0 z-[1];
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+
+   .grid__item_title {
+    @apply text-[17rem] font-bold mt-[10rem] text-center leading-[22rem];
+  }
+}

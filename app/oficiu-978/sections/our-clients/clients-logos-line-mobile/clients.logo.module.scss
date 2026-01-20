@@ -1,0 +1,59 @@
+.carousel {
+  @apply py-[90rem] flex;
+
+  @media screen and (max-width: 600px) {
+    @apply py-[45rem];
+  }
+}
+.carousel__wrapper {
+  @apply block relative w-full;
+
+  @media screen and (max-width: 600px) {
+    @apply absolute top-[-1000rem] left-[1000];
+  }
+}
+.carousel__wrapper_mobile {
+  @apply hidden;
+
+  @media screen and (max-width: 600px) {
+    @apply block;
+  }
+}
+.carousel__slide {
+  @apply w-fit h-auto;
+
+  @media screen and (max-width: 600px) {
+    // @apply p-[28rem];    
+  }
+}
+.business_slider {
+  @apply block w-full h-full mt-[90rem];
+
+  @media screen and (max-width: 600px) {
+    // @apply mt-[40rem] ;
+  }
+}
+.embla__viewport {
+  @apply mr-[18rem];
+  pointer-events: none;
+}
+.embla__container {
+  @apply flex gap-[68rem] mx-0;
+  @media screen and (max-width: 600px) {
+    @apply gap-[28rem];
+  }
+}
+.embla__slide {
+  @apply flex items-center;
+  flex: 0 0 auto;
+  min-width: 0;
+  box-sizing: border-box;
+
+  &:nth-child(20) {
+    @apply mr-[18rem];
+  }
+
+  @media screen and (max-width: 600px) {
+    // flex: 0 0 330rem;
+  }
+}

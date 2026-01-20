@@ -1,0 +1,29 @@
+.policy {
+    @apply w-full h-auto bg-white overflow-auto;
+}
+.container {
+   @media screen and (min-width: 576px)  {
+        @apply max-w-full mx-auto w-[1100rem];
+    }
+
+    @media screen and (min-width: 1640px)  {
+        @apply relative top-0 left-0 max-w-full mx-auto w-[1218rem];
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply w-full h-full px-[15rem] flex flex-col justify-start;
+    }
+}
+.content {
+    @apply py-[25rem] sm:py-[40rem];
+    
+}
+.title {
+    @apply text-[12rem] sm:text-[18rem] font-bold;
+}
+.subtitle {
+    @apply text-[12rem] sm:text-[16rem] font-bold mt-[10rem] sm:mt-[4rem];
+}
+.text {
+    @apply text-[10rem] sm:text-[14rem] font-medium mt-[10rem] sm:mt-[4rem] text-justify;
+}

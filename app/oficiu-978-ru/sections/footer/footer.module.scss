@@ -1,0 +1,35 @@
+.footer {
+  @apply w-full h-auto bg-[#172012] pt-[50rem] pb-[18rem];
+
+  @media screen and (max-width: 600px) {
+  @apply py-[20rem];
+  }
+}
+.footer_wrapper {
+  @apply w-[1200rem] mx-auto;
+
+  @media screen and (max-width: 600px) {
+    @apply w-full px-0;
+  }
+}
+.footer_inner {
+  @apply flex flex-col justify-start p-0 m-0;
+}
+.footer_copy__text {
+  @apply text-[16rem] text-white font-medium leading-[125%] p-0 m-0 text-center;
+  
+  @media screen and (max-width: 600px) {
+    @apply text-[14rem] leading-[143%];
+  }
+}
+.footer_copy__link {
+  @apply underline font-semibold;
+}
+
+.footer_links {
+  @apply flex justify-center gap-[42rem] text-[16rem] text-white font-medium p-0 m-0 mt-[12rem];
+
+  @media screen and (max-width: 600px) {
+    @apply text-[14rem] mt-[8rem] gap-[10rem];
+  }
+}

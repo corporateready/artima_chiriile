@@ -1,0 +1,105 @@
+.business {
+  @apply w-full h-full pt-[170rem];
+
+  @media screen and (max-width: 600px) {
+    @apply pt-[58rem] pl-[15rem];
+  }
+}
+
+.business_wrapper {
+  @apply w-[1260rem] h-full mx-auto;
+
+  @media screen and (max-width: 600px) {
+    @apply w-full px-0;
+  }
+}
+
+.business_title {
+  @apply text-[45rem] font-bold leading-[130%] text-left;
+
+  @media screen and (max-width: 600px) {
+    @apply text-[28rem] text-left;
+  }
+}
+
+.business_text__yellow {
+  background: linear-gradient(101deg, #916527 0%, #daa22e 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.business_text {
+  @apply text-[#231f20];
+}
+
+.business_slider {
+  @apply block w-full h-full mt-[90rem];
+
+  @media screen and (min-width: 1640px) {
+    // @apply ml-[17vw];
+  }
+
+  @media screen and (max-width: 600px) {
+    @apply mt-[40rem];
+  }
+}
+
+.present_slide__1 {
+  @apply w-[370rem] h-[580rem] bg-[url('../../../../public/sales/business-carousel/business-slide-1.webp')] bg-cover bg-center rounded-[18rem];
+
+  @media screen and (max-width: 600px) {
+    @apply w-[329rem] h-[513rem];
+  }
+}
+
+.present_slide__2 {
+  @apply w-[370rem] h-[580rem] bg-[url('../../../../public/sales/business-carousel/business-slide-2.webp')] bg-cover bg-center rounded-[18rem];
+
+    @media screen and (max-width: 600px) {
+    @apply w-[329rem] h-[513rem];
+  }
+}
+
+.present_slide__3 {
+  @apply w-[370rem] h-[580rem] bg-[url('../../../../public/sales/business-carousel/business-slide-3.webp')] bg-cover bg-center rounded-[18rem];
+
+        @media screen and (max-width: 600px) {
+    @apply w-[329rem] h-[513rem];
+  }
+}
+.slider__mobile_wrapper {
+  @apply hidden;
+
+  @media screen and (max-width:600px) {
+    @apply block;
+  }
+}
+.slider__laptop_wrapper {
+  @apply block;
+
+  @media screen and (max-width:600px) {
+    @apply hidden;
+  }
+}
+.present_slide__4 {
+  @apply w-[370rem] h-[580rem] bg-[url('../../../../public/sales/business-carousel/business-slide-4.webp')] bg-cover bg-center rounded-[18rem];
+
+      @media screen and (max-width: 600px) {
+    @apply w-[329rem] h-[513rem];
+  }
+}
+.embla__container {
+  @apply flex gap-[18rem] mx-0;
+  @media screen and (max-width: 600px) {
+    @apply mr-[15rem];
+  }
+}
+.embla__slide {
+  flex: 0 0 372rem;
+  min-width: 0;
+
+  @media screen and (max-width: 600px) {
+    flex: 0 0 330rem;
+  }
+}

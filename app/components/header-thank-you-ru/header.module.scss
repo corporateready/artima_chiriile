@@ -1,0 +1,25 @@
+.booking_header {
+  @apply w-full relative top-0 left-0 z-0 bg-white;
+  box-shadow: 0 4rem 4rem 0 rgba(0, 0, 0, 0.25);
+  font-family: 'SF Pro Display';
+}
+.booking_header__inner {
+  @apply flex items-center justify-between px-[15rem] w-full sm:w-[1260rem] h-[86rem] sm:h-[116rem] mx-auto;
+}
+.booking_header__navigate {
+  @apply flex gap-[24rem];
+}
+.header_navigate__lang {
+  @apply flex justify-center items-center w-[44rem] h-[44rem] bg-[#f2f2f2] text-[14rem] sm:text-[18rem] text-[#323031] uppercase rounded-full font-medium;
+
+  @media screen and (max-width:600px) {
+    @apply bg-transparent w-fit;
+  }
+}
+.header_navigate__phone {
+  @apply flex justify-center items-center w-[204rem] h-[44rem] bg-[#f2f2f2] text-[18rem] text-[#323031] uppercase rounded-full font-bold;
+  
+  @media screen and (max-width:600px) {
+    @apply bg-transparent text-[0rem] w-[30rem] h-[30rem] relative top-0 right-0;
+  }
+}

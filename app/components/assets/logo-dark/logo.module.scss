@@ -1,0 +1,9 @@
+.logo {
+  @apply w-[14.3vw] h-[4.8vw];
+  @media screen and (min-width: 1640px) {
+    @apply w-[206rem] h-[70rem];
+  }
+  @media screen and (max-width: 576px) {
+    @apply w-[20.4vh] h-[7vh];
+  }
+}

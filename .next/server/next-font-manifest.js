@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/evgheninujnenco/Downloads/artima-chiriile/app/layout\":[\"static/media/904be59b21bd51cb-s.p.woff2\",\"static/media/47cbc4e2adbc5db9-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

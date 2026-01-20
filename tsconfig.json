@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/form-popup/index.jsx", "app/page.jsx", "app/components/form-popup/preloader/index.jsx", "app/components/form-popup/form-ac/index.jsx", "app/layout.tsx", "app/components/header/page.jsx", "app/components/assets/progress-line/page.jsx", "app/rudderstack.js", "app/useRudderAnalytics.ts", "app/components/assets/logo-dark/page.jsx", "app/components/header-booking/index.jsx", "app/providers.tsx"],
+  "exclude": ["node_modules"]
+}

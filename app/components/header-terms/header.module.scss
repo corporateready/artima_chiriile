@@ -1,0 +1,45 @@
+.header {
+    @apply relative top-0 left-0 h-auto w-full z-[3];
+}
+.header__wrapper {
+    @apply flex justify-between items-center pt-[30rem];
+
+    @media screen and (max-width: 576px) {
+        @apply pt-[20rem];
+    }
+
+    // @media screen and (max-width: 576px) and (max-height: 740px) and (orientation: portrait) {
+    //     @apply pt-[3vh];
+    // }
+}
+.container {
+    @media screen and (min-width: 576px)  {
+        @apply relative top-0 left-0 max-w-full mx-auto w-[1100rem];
+    }
+
+   @media screen and (min-width: 1640px)  {
+        @apply relative top-0 left-0 max-w-full mx-auto w-[1218rem];
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply w-full h-full px-[20rem] flex flex-col justify-start;
+    }
+}
+.header__phone_btn {
+    @apply w-[15.1vw] h-[2.8vw] bg-[#FFC231] flex text-[#363636] text-[1.55vw] font-semibold justify-center items-center rounded-[6rem];
+    box-shadow: 2rem 2rem 11rem 0rem rgba(0, 0, 0, 0.7);
+
+    @media screen and (min-width: 1640px) {
+        @apply w-[218rem] h-[41rem] text-[22rem];
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply hidden;
+    }
+}
+.header__phone_btn__mob {
+    @media screen and (max-width: 576px) {
+        @apply block border-[3px] border-white rounded-full w-[50px] h-[50px] relative;
+        box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.7);
+    }
+}
