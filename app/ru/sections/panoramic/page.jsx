@@ -43,7 +43,7 @@ const Page = () => {
         <div className={styles.panoramic_inner__list}>
           <div className="flex items-center gap-[16rem] sm:gap-[27rem]">
             <svg
-              className="w-[28rem] h-[28rem] sm:w-[50rem] sm:h-[50rem]"
+              className="w-[24rem] h-[24rem] sm:w-[50rem] sm:h-[50rem]"
               viewBox="0 0 50 50"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const Page = () => {
           </div>
           <div className="flex items-center gap-[16rem] sm:gap-[27rem]">
             <svg
-              className="w-[50rem] h-[50rem]"
+              className="w-[44rem] h-[44rem] sm:w-[50rem] sm:h-[50rem]"
               viewBox="0 0 50 50"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +149,7 @@ const Page = () => {
           </div>
           <div className="flex items-center gap-[16rem] sm:gap-[27rem]">
             <svg
-              className="w-[50rem] h-[50rem]"
+              className="w-[44rem] h-[44rem] sm:w-[50rem] sm:h-[50rem]"
               viewBox="0 0 50 44"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +179,7 @@ const Page = () => {
           </div>
           <div className="flex items-center gap-[16rem] sm:gap-[27rem]">
             <svg
-              className="w-[28rem] h-[23rem] sm:w-[50rem] sm:h-[41rem]"
+              className="w-[26rem] h-[21rem] sm:w-[50rem] sm:h-[41rem]"
               viewBox="0 0 50 41"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
