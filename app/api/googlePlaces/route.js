@@ -1,7 +1,6 @@
-
 export async function GET(request) {
 
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJS2gzy9p9yUARa-ZmvFU-kd8&key=AIzaSyDBwXJ1SBcSfzRlZOr0NTi5xSHhCobzHs4`;
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.NEXT_PUBLIC_GOOGLE_MAP}`;
 
   try {
     const response = await fetch(url);
