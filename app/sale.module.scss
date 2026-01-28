@@ -10,6 +10,10 @@
   @media screen and (min-width: 600px) {
     @apply w-[100dvw] h-[1306rem] bg-[url('/artima-laptop-home-bg.avif')] bg-cover bg-no-repeat bg-top;
   }
+
+  @media screen and (min-width: 1641px) {
+    @apply bg-top bg-cover h-[1600rem];
+  }
 }
 .sale_header {
   @apply relative z-[4];
@@ -66,7 +70,7 @@
   }
 }
 .head_content__title {
-  @apply text-[50rem] text-white font-bold text-center leading-[120%];
+  @apply text-[45rem] text-white font-bold text-center leading-[120%];
   
   text-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.8);
 
@@ -80,7 +84,7 @@
 
   &::before {
     content: '';
-    @apply inline-block absolute bottom-[8rem] left-[-12rem] z-[-1] w-[380rem] h-[28rem];
+    @apply inline-block absolute bottom-[5rem] left-[-12rem] z-[-1] w-[380rem] h-[32rem];
     background: linear-gradient(90deg, rgba(145, 101, 39, 0) 0.5%, #916527 13%, #daa22e 87.5%, rgba(218, 162, 46, 0) 98.5%);
 
     @media screen and (max-width: 600px) {

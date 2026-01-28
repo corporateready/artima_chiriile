@@ -2,7 +2,7 @@
   @apply w-full h-full pt-[50rem] pb-[180rem];
 
   @media screen and (max-width: 600px) {
-    @apply pb-[80rem] pt-[46em] pl-0;
+    @apply pb-[70rem] pt-[46em] pl-0;
   }
 }
 
@@ -43,7 +43,7 @@
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;
    
   @media screen and (max-width: 600px) {
-    @apply text-[21rem] font-medium leading-[130%] text-[#231f20] absolute bottom-[-94rem] left-[15rem] z-[2] w-full h-auto;
+    @apply text-[21rem] font-medium leading-[120%] text-[#231f20] absolute bottom-[-90rem] left-[15rem] z-[2] w-full h-auto;
   }
   span {
   
@@ -115,7 +115,7 @@
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;
   
   @media screen and (max-width: 600px) {
-    @apply text-[21rem] font-medium leading-[130%] text-[#231f20] absolute bottom-[-94rem] left-[15rem] z-[2] w-full h-auto;
+    @apply text-[21rem] font-medium leading-[120%] text-[#231f20] absolute bottom-[-90rem] left-[15rem] z-[2] w-full h-auto;
   }
 
   span {
@@ -150,7 +150,7 @@
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;
   
   @media screen and (max-width: 600px) {
-    @apply text-[21rem] font-medium leading-[130%] text-[#231f20] absolute bottom-[-150rem] left-[15rem] z-[2] w-full h-auto;
+    @apply text-[21rem] font-medium leading-[120%] text-[#231f20] absolute bottom-[-140rem] left-[15rem] z-[2] w-full h-auto;
   }
 
   span {
@@ -177,13 +177,13 @@
 .about_slide__5 {
   @apply block w-full mt-[110rem] h-[680rem] bg-[url('../../../../public/sales/about/about-slide-5.webp')] bg-cover bg-center rounded-[18rem] relative z-0;
   @media screen and (max-width: 600px) {
-    @apply rounded-none mt-[184rem] h-[414rem];
+    @apply rounded-none mt-[176rem] h-[414rem];
   }
   .slide_description {
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;
   
   @media screen and (max-width: 600px) {
-    @apply text-[21rem] font-medium leading-[130%] text-[#231f20] absolute bottom-[-94rem] left-[15rem] z-[2] w-full h-auto;
+    @apply text-[21rem] font-medium leading-[120%] text-[#231f20] absolute bottom-[-88rem] left-[15rem] z-[2] w-full h-auto;
   }
 
   span {
@@ -209,7 +209,6 @@
 
 .about_btn {
   @apply w-[740rem] h-[110rem] text-[28rem] font-bold text-white uppercase flex justify-center items-center rounded-full mx-auto mt-[186rem];
-  // background: linear-gradient(55deg, #916527 0%, #daa22e 100%);
   background: linear-gradient(-45deg, #916527, #DAA22E, #C38F2D, #DAA22E, #916527);
     animation: gradient 7s ease infinite;
     background-size: 600%;
@@ -228,6 +227,6 @@
     }
 
   @media screen and (max-width: 600px) {
-    @apply w-[390rem] h-[76rem] text-[19rem] mt-[156rem];
+    @apply w-[390rem] h-[76rem] text-[19rem] mt-[150rem] leading-[120%];
   }
 }

@@ -29,8 +29,9 @@ const Index = () => {
           </p>
           <p className={styles.parking__text}>
             Варианты оплаты парковочных {""}
-            <br />мест: месячный абонемент или {""}
-            <br />почасовая тарификация
+            <br className="inline-block sm:hidden"/>мест: {""}
+            <br className="hidden sm:inline-block"/>месячный абонемент или {""}
+            <br className="inline-block sm:hidden" />почасовая тарификация
           </p>
         </div>
       </div>

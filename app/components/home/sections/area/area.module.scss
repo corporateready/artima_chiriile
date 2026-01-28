@@ -74,8 +74,7 @@
 }
 
 .presentation_btn {
-  @apply w-[590rem] h-[110rem] text-[29rem] font-bold text-white flex justify-center items-center rounded-full mx-auto mt-[180rem] uppercase;
-  // background: linear-gradient(55deg, #916527 0%, #daa22e 100%);
+  @apply w-[590rem] h-[110rem] text-[29rem] font-bold text-white flex justify-center items-center rounded-full mx-auto mt-[180rem] uppercase leading-[130%];
 
   background: linear-gradient(-45deg, #916527, #DAA22E, #C38F2D, #DAA22E, #916527);
     animation: gradient 7s ease infinite;
