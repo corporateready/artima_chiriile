@@ -1,8 +1,8 @@
 .multi {
-  @apply w-full h-full pt-[80rem] pb-[10rem];
+  @apply w-full h-full pt-[86rem] pb-[10rem];
 
   @media screen and (max-width: 600px) {
-    @apply pt-[65rem] pb-0;
+    @apply pt-[42rem] pb-0;
   }
 }
 .multi_wrapper {
@@ -16,7 +16,7 @@
   @apply text-[45rem] font-bold leading-[60rem];
 
   @media screen and (max-width: 600px) {
-    @apply text-[28rem] leading-[138%];
+    @apply text-[28rem] leading-[128%];
   }
 }
 .multi_text__yellow {

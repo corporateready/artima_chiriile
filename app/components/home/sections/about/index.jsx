@@ -8,13 +8,12 @@ const Page = ({ handleTogglePopup }) => {
       <div className={styles.about_wrapper}>
         <p className={styles.about_title}>
           De ce {""}
-          <br className="inline-block sm:hidden" />
-          <span className={styles.about_text__yellow}>acest birou {""}</span>
-          <br className="hidden sm:inline-block" />
+          <span className={styles.about_text__yellow}>birourile ARTIMA {""}</span>
+          <br className="hidden sm:inline-block"/>
           <span className={styles.about_text}>
-            este spațiul {""}
+            reprezintă alegerea potrivită {""}
             <br className="inline-block sm:hidden" />
-            ideal pentru afacerea ta?
+            pentru afacerea ta?
           </span>
         </p>
         <div className={styles.about_slide__1}>

@@ -8,8 +8,6 @@
 
   @media screen and (min-width: 600px) {
     @apply w-full h-[1306rem] bg-[url('/sales/artima-sales-header-bg.webp')] bg-cover bg-no-repeat bg-top;
-  //   background-position-y: 40rem;
-  // -webkit-background-position-y: 40rem;
   }
 
   @media screen and (min-width: 1641px) {
@@ -30,7 +28,7 @@
   @apply flex justify-between items-center pt-[52rem];
 
   @media screen and (max-width: 600px) {
-    @apply pt-[22rem];
+    @apply pt-[16rem];
   }
 }
 .sale_header__logo {

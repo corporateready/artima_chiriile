@@ -2,22 +2,11 @@
 import React from "react";
 import styles from "../business.module.scss";
 import useEmblaCarousel from "embla-carousel-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
-import { useInView } from "react-intersection-observer";
 
 const Page = () => {
 
   const businessCollection = [
-    {
-      id: 1,
-      slideImg: styles.present_slide__1,
-      slideText: [
-        "Prima clădire ",
-        <b>energoeficientă</b>,
-        " din Moldova certificată BREEAM",
-      ],
-    },
+
     {
       id: 2,
       slideImg: styles.present_slide__2,
@@ -40,6 +29,14 @@ const Page = () => {
       slideText: [
         <b>5 ascensoare moderne</b>,
         " (trei business, unul marfar și unul tehnic) cu deschidere bilaterală și acces direct la etajul 2",
+      ],
+    },
+    {
+      id: 5,
+      slideImg: styles.present_slide__5,
+      slideText: [
+        <b>Escalatoare avansate </b>,
+        " pentru un flux eficient al vizitatorilor",
       ],
     },
   ];
@@ -85,7 +82,7 @@ const Page = () => {
         {businessCollection.map((slide) => (
           <div key={slide.id} className={`${styles.embla__slide}`}>
             <div className={`${slide.slideImg}`}></div>
-            <p className="text-[15rem] sm:text-[22rem] text-black mt-[14rem] font-normal">
+            <p className="text-[15rem] sm:text-[22rem] text-black mt-[14rem] leading-[110%] font-normal">
               {slide.slideText}
             </p>
           </div>

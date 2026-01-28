@@ -1,5 +1,5 @@
 .grid__container {
-  @apply flex gap-[35rem] mt-[90rem] w-full;
+  @apply flex gap-[35rem] mt-[100rem] w-full;
 
   @media screen and (max-width: 600px) {
     @apply hidden;

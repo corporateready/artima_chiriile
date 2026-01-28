@@ -1,5 +1,11 @@
 {
   "pages": {
+    "/ru/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/ru/page.css",
+      "static/chunks/app/ru/page.js"
+    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -12,23 +18,10 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/oficiu-978-ru/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/oficiu-978-ru/page.css",
-      "static/chunks/app/oficiu-978-ru/page.js"
-    ],
-    "/oficiu-978/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/oficiu-978/page.css",
-      "static/chunks/app/oficiu-978/page.js"
-    ],
-    "/ru/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/ru/page.css",
-      "static/chunks/app/ru/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

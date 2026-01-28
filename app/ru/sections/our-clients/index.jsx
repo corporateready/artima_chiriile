@@ -10,7 +10,7 @@ const Index = ({ ourClientsLogosCollectionForMobile,businessCollection }) => {
     });
   return (
     <div className="">
-      <p className={styles.clients__title}>Клиенты, которые выбирают нас</p>
+      <p className={styles.clients__title}>Клиенты, которые {""}<br className="inline-block sm:hidden" />выбирают нас</p>
       {isMobile ? (
         <ClientsLogoLineMobile
           ourClientsLogosCollectionForMobile={

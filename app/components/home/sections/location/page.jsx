@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import styles from "./location.module.scss";
-import Link from "next/link";
 import MapComponent from "./MapComponent"
  
 const Page = () => {

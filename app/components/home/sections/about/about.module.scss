@@ -1,8 +1,9 @@
 .about {
-  @apply w-full h-full pt-[90rem] pb-[180rem];
+  @apply pb-[80rem] pt-[56rem] pl-0;
 
-  @media screen and (max-width: 600px) {
-    @apply pb-[80rem] pt-[70rem] pl-0;
+
+  @media screen and (min-width: 600px) {
+      @apply w-full h-full pt-[90rem] pb-[180rem];    
   }
 }
 
@@ -37,7 +38,7 @@
   @apply block w-full mt-[90rem] h-[680rem] bg-[url('../../../../../public/sales/about/about-slide-1.webp')] bg-cover bg-center rounded-[18rem] relative z-0;
 
   @media screen and (max-width: 600px) {
-    @apply rounded-none h-[414rem];
+    @apply rounded-none h-[402rem];
   }
   .slide_description {
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;
@@ -75,7 +76,7 @@
   @apply block w-full mt-[110rem] h-[680rem] bg-[url('../../../../../public/sales/about/about-slide-2.webp')] bg-cover bg-center rounded-[18rem] relative z-0;
   
   @media screen and (max-width: 600px) {
-    @apply rounded-none h-[414rem] mt-[100rem] bg-[url('../../../../../public/sales/about/about-slide-2-mobile.webp')] bg-cover bg-center;
+    @apply rounded-none h-[402rem] mt-[96rem] bg-[url('../../../../../public/sales/about/about-slide-2-mobile.webp')] bg-cover bg-center;
   }
   .slide_description {
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;
@@ -110,7 +111,7 @@
   @apply block w-full mt-[110rem] h-[680rem] bg-[url('../../../../../public/sales/about/about-slide-3.webp')] bg-cover bg-center rounded-[18rem] relative z-0;
 
   @media screen and (max-width: 600px) {
-    @apply rounded-none h-[414rem] mt-[100rem];
+    @apply rounded-none h-[402rem] mt-[94rem];
   }
   .slide_description {
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;
@@ -141,12 +142,12 @@
 }
 
 .about_slide__4 {
-  @media screen and (max-width: 600px) {
-    @apply rounded-none h-[414rem] mt-[120rem] bg-[url('../../../../../public/sales/about/about-slide-4-mobile.webp')] bg-cover bg-no-repeat bg-left ml-[-1rem];
+  @apply block w-full mt-[110rem] h-[680rem] bg-[url('../../../../../public/sales/about/about-slide-4.webp')] bg-cover bg-center rounded-none relative z-0;
+ 
+   @media screen and (max-width: 600px) {
+    @apply rounded-none h-[402rem] mt-[118rem] bg-[url('../../../../../public/sales/about/about-slide-4-mobile.webp')] bg-cover bg-no-repeat bg-left ml-[-1rem];
   }
 
-  @apply block w-full mt-[110rem] h-[680rem] bg-[url('../../../../../public/sales/about/about-slide-4.webp')] bg-cover bg-center rounded-[18rem] relative z-0;
-  
   .slide_description {
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;
   
@@ -165,20 +166,20 @@
   }
 }
 
-.slide_description::before {
-  @apply inline-flex absolute top-[25rem] left-0 z-[-1] w-[414rem] h-[20rem];
-  content: '';
-  background-image: linear-gradient(90deg, rgba(145, 101, 39, 0) 0.5%, #916527 13%, #daa22e 87.5%, rgba(218, 162, 46, 0) 98.5%);
-   @media screen and (max-width: 600px) {
-    @apply w-0 h-0;
-  }
+  .slide_description::before {
+    @apply inline-flex absolute top-[25rem] left-0 z-[-1] w-[414rem] h-[20rem];
+    content: '';
+    background-image: linear-gradient(90deg, rgba(145, 101, 39, 0) 0.5%, #916527 13%, #daa22e 87.5%, rgba(218, 162, 46, 0) 98.5%);
+    @media screen and (max-width: 600px) {
+      @apply w-0 h-0;
+    }
 }
 }
 
 .about_slide__5 {
   @apply block w-full mt-[110rem] h-[680rem] bg-[url('../../../../../public/sales/about/about-slide-5.webp')] bg-cover bg-center rounded-[18rem] relative z-0;
   @media screen and (max-width: 600px) {
-    @apply rounded-none h-[414rem] mt-[130rem];
+    @apply rounded-none h-[402rem] mt-[120rem];
   }
   .slide_description {
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;
@@ -210,10 +211,10 @@
 
 .about_btn {
   @apply w-[740rem] h-[110rem] text-[28rem] font-bold text-white uppercase flex justify-center items-center rounded-full mx-auto mt-[186rem];
-  // background: linear-gradient(55deg, #916527 0%, #daa22e 100%);
+
   background: linear-gradient(-45deg, #916527, #DAA22E, #C38F2D, #DAA22E, #916527);
-    animation: gradient 7s ease infinite;
-    background-size: 600%;
+  animation: gradient 7s ease infinite;
+  background-size: 600%;
 
     @keyframes gradient {
       0% {
@@ -229,6 +230,6 @@
     }
 
   @media screen and (max-width: 600px) {
-    @apply w-[390rem] h-[74rem] text-[19rem] mt-[156rem];
+    @apply w-[390rem] h-[72rem] text-[18rem] mt-[150rem] leading-[120%];
   }
 }

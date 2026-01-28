@@ -6,18 +6,7 @@ import useEmblaCarousel from "embla-carousel-react";
 const Page = () => {
 
   const businessCollection = [
-    {
-      id: 1,
-      slideImg: styles.present_slide__1,
-      slideText: [
-        "Первое в Молдове",
-        <br className="hidden sm:inline-block" />,
-        <b> энергоэффективное</b>,
-        " офисное",
-        <br className="hidden sm:inline-block" />,
-        " здание",
-      ],
-    },
+    
     {
       id: 2,
       slideImg: styles.present_slide__2,
@@ -40,6 +29,17 @@ const Page = () => {
       slideText: [
         <b>5 современных лифтов</b>,
         " (три бизнес-лифта, один грузовой и один технический) с двусторонним открытием и прямым доступом на второй этаж",
+      ],
+    },
+    {
+      id: 1,
+      slideImg: styles.present_slide__5,
+      slideText: [
+        <b> Современные эскалаторы</b>,
+        <br className="inline-block" />,
+        " для эффективного потока",
+        <br className="inline-block" />,
+        " посетителей",
       ],
     },
   ];
@@ -84,7 +84,7 @@ const Page = () => {
         {businessCollection.map((slide) => (
           <div key={slide.id} className={`${styles.embla__slide}`}>
             <div className={`${slide.slideImg}`}></div>
-            <p className="text-[15rem] sm:text-[22rem] text-black mt-[14rem] font-normal">
+            <p className="text-[19.5rem] sm:text-[22rem] text-black mt-[28rem] font-normal leading-[120%]">
               {slide.slideText}
             </p>
           </div>

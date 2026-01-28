@@ -1,23 +1,22 @@
 .wrapper_page {
-  @apply relative overflow-hidden z-0;
+  @apply relative overflow-hidden z-0 sm:mt-[-56rem];
   font-family: 'SF Pro Display', sans-serif;
 
   background: linear-gradient(180deg, #f5f5f7 48.24%, #fff 100%);
 }
 .sale_head {
-    
-  @apply w-full h-[841rem] bg-[url('/sales/artima-sales-header-bg-mobile-2.webp')] bg-cover bg-no-repeat bg-top;
+  @apply w-full h-[808rem] bg-[url('/sales/artima-sales-header-bg-mobile.webp')] bg-cover bg-no-repeat;
 
-  // @media screen and (min-width: 600px) {
-  //   @apply w-full h-[1248rem] bg-[url('/sales/artima-sales-header-bg.webp')] bg-cover bg-no-repeat bg-top;
-  // }
+
   @media screen and (min-width: 600px) {
-    @apply w-[100dvw] h-[1306rem] bg-[url('/artima-laptop-home-bg.avif')] bg-cover bg-no-repeat bg-top;
+    @apply w-[100dvw] h-[1315rem] bg-[url('/artima-laptop-home-bg.avif')] bg-cover bg-no-repeat bg-top;
   }
 
-  // @media screen and (min-width: 1641px) {
-  //   @apply w-full h-[1600rem] bg-[url('/sales/artima-sales-header-bg.webp')] bg-cover bg-no-repeat bg-top;
-  // }
+  @media screen and (min-width: 1641px) {
+    // @apply h-[1600rem];
+    @apply w-full h-[1600rem] bg-[url('/sales/artima-sales-header-bg.webp')] bg-cover bg-no-repeat bg-top;
+    // background-position-y: 1rem;
+  }
 }
 .sale_header {
   @apply relative z-[3];
@@ -26,11 +25,11 @@
   @apply w-[1300rem] h-full mx-auto;
 
   @media screen and (max-width: 600px) {
-    @apply w-full px-[14rem];
+    @apply w-full px-[10rem];
   }
 }
 .sale_header__inner {
-  @apply flex justify-between items-center pt-[42rem];
+  @apply flex justify-between items-center pt-[94rem];
 
   @media screen and (max-width: 600px) {
     @apply pt-[17rem];
@@ -71,43 +70,34 @@
   }
 }
 .sale_head__content {
-  @apply relative z-[3];
+  // @apply relative z-[3];
 
    @media screen and (min-width: 1641px) {
     @apply mt-[100rem];
   }
 }
 .head_content__title {
-  @apply text-[48rem] text-white font-bold text-center leading-[62rem];
-  
+  @apply text-[42rem] text-white font-bold text-center leading-[57rem] mt-[2rem];
   text-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.8);
-
-  @media screen and (max-width: 600px) {
-    @apply text-[30.5rem] mt-[40rem] leading-[123%];
-  }
-}
-.head_content__title_decor {
-  @apply text-[50rem] text-white font-bold text-center leading-[120%] relative z-0;
 
   &::before {
     content: '';
-    @apply inline-block absolute bottom-[2rem] left-[-10rem] z-[-1] w-[166rem] h-[28rem];
+    @apply inline-block absolute top-[26rem] left-[260rem] translate-x-0 translate-y-0 z-[-1] w-[322rem] h-[26rem];
     background: linear-gradient(90deg, rgba(145, 101, 39, 0) 0.5%, #916527 13%, #daa22e 87.5%, rgba(218, 162, 46, 0) 98.5%);
-
-    @media screen and (max-width: 600px) {
-      @apply inline-block absolute bottom-[-2rem] left-[-8rem] z-[-1] w-[102rem] h-[16rem];
-    }
-
   }
-  
-  text-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.8);
 
   @media screen and (max-width: 600px) {
-    @apply text-[29rem] mt-[27rem] leading-[123%];
+    @apply text-[27.5rem] mt-[13rem] leading-[115%] relative z-0;
+
+    &::before {
+    content: '';
+    @apply inline-block absolute top-[10rem] left-[100rem] translate-x-0 translate-y-0 z-[-1] w-[196rem] h-[22rem];
+    background: linear-gradient(90deg, rgba(145, 101, 39, 0) 0.5%, #916527 13%, #daa22e 87.5%, rgba(218, 162, 46, 0) 98.5%);
   }
 }
+}
 .head_content__subtitle {
-  @apply text-[28rem] text-white font-normal text-center leading-[130%] mt-[16rem];
+  @apply text-[26rem] text-white font-normal text-center leading-[130%] mt-[7rem];
   
 
   @media screen and (max-width: 600px) {
@@ -119,11 +109,11 @@
   
 
   @media screen and (max-width: 600px) {
-    @apply inline-block text-center text-[19.5rem] mt-[18rem] text-white;
+    @apply flex justify-center text-center text-[17.5rem] mt-[10rem] text-white leading-[115%];
   }
 }
 .sale_head__btn {
-  @apply w-[456rem] h-[66rem] mx-auto rounded-full text-[25rem] text-white leading-none flex justify-center items-center mt-[24rem] uppercase font-bold;
+  @apply w-[456rem] h-[65rem] mx-auto rounded-full text-[25rem] text-white leading-none flex justify-center items-center mt-[15rem] uppercase font-bold;
 
   background: linear-gradient(-45deg, #916527, #DAA22E, #C38F2D, #DAA22E, #916527);
     animation: gradient 7s ease infinite;
@@ -143,7 +133,7 @@
     }
 
   @media screen and (max-width: 600px) {
-    @apply h-[70rem] w-[330rem] text-[20rem] leading-none mt-[26rem];
+    @apply h-[70rem] w-[330rem] text-[20rem] leading-none mt-[20rem];
   }
 }
 .multi_carousel__slide_modal {

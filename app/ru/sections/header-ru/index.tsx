@@ -45,7 +45,7 @@ const Index = (props: Props) => {
         <div className={styles.sale_header__inner}>
           <Logo />
           <div className={styles.sale_header__navigate}>
-            <Link href={"/oficiu-978"} className={styles.header_navigate__lang}>
+            <Link href={"/"} className={styles.header_navigate__lang}>
               ro
             </Link>
 

@@ -55,7 +55,7 @@ const Index = (props: Props) => {
           <Logo />
           <div className={styles.sale_header__navigate}>
             <Link
-              href={"/oficiu-978-ru"}
+              href={"/ru"}
               className={styles.header_navigate__lang}
             >
               ru

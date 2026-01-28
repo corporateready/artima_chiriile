@@ -19,11 +19,11 @@
   @apply text-[16rem] text-white font-medium leading-[125%] p-0 m-0 text-center mt-[-18rem];
   
   @media screen and (max-width: 600px) {
-    @apply text-[14rem] leading-[138%] mt-0;
+    @apply text-[13rem] font-normal leading-[138%] mt-0;
   }
 }
 .footer_copy__link {
-  @apply underline;
+  @apply underline font-bold;
 }
 
 .footer_links {

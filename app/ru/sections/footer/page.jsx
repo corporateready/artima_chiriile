@@ -181,16 +181,15 @@ const Page = () => {
             </svg>
           {/* </Link> */}
           <p className={styles.footer_copy__text}>
-            Ⓒ {fullYear} Все права защищены.
-             {/* Для объявлений перейдите`}{" "} */}
-            {/* <br className="inline-block sm:hidden" />
+            Ⓒ {fullYear} Все права защищены. Для объявлений перейдите{" "}
+            <br className="inline-block sm:hidden" />
             по {""}
             <Link
               href={"https://anunturi.artima.md"}
               className={styles.footer_copy__link}
             >
               ссылке.{" "}
-            </Link> */}
+            </Link>
           </p>
           <div className={styles.footer_links}>
             <Link href={"/terms"}> Условия и положения </Link>

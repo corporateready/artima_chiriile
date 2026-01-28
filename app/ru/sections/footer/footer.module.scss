@@ -27,9 +27,9 @@
 }
 
 .footer_links {
-  @apply flex justify-center gap-[42rem] text-[16rem] text-white font-medium p-0 m-0 mt-[12rem];
+  // @apply flex justify-center gap-[42rem] text-[16rem] text-white font-medium p-0 m-0 mt-[12rem];
 
   @media screen and (max-width: 600px) {
-    @apply text-[14rem] mt-[8rem] gap-[10rem];
+    @apply flex justify-center text-[15rem] text-white font-medium p-0 m-0 mt-[8rem] gap-[10rem];
   }
 }

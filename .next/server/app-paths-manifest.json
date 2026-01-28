@@ -1,6 +1,5 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/oficiu-978-ru/page": "app/oficiu-978-ru/page.js",
-  "/oficiu-978/page": "app/oficiu-978/page.js",
   "/ru/page": "app/ru/page.js"
 }

@@ -181,14 +181,14 @@ const Page = () => {
             </svg>
           {/* </Link> */}
           <p className={styles.footer_copy__text}>
-            © {fullYear} Toate drepturile sunt rezervate.
-            {/* , pentru anunțuri accesați`}{" "} */}
-            {/* <Link
+            © {fullYear} Toate drepturile sunt rezervate
+            , pentru anunțuri accesați{" "}
+            <Link
               href={"https://anunturi.artima.md"}
               className={styles.footer_copy__link}
             >
               link-ul.{" "}
-            </Link> */}
+            </Link>
           </p>
           <div className={styles.footer_links}>
             <Link href={"/terms"}>Terms & conditions</Link>

@@ -16,12 +16,10 @@ import { motion } from "framer-motion";
 import useRudderStackAnalytics from "./useRudderAnalytics";
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
-// import { useAnalytics } from "../../lib/posthog";
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_PIXEL_ID;
 
 const Page = () => {
-  // const { track, identify, alias } = useAnalytics();
   const eventIdGen = uuidv4();
   const formSubmittedEventId = uuidv4();
 
@@ -756,20 +754,17 @@ const Page = () => {
         <div className={styles.sale_head__content}>
           <div className={styles.sale_header__wrapper}>
             <h2 className={styles.head_content__title}>
-              {/* Oficiu exclusiv de vânzare */}
-              <span>Business centru</span>
-              <br />cu oficii și spații comerciale premium{" "}
-              {/* <p className={styles.current__word}>inclusă</p> cadou */}
+              <span>Business centru </span>{""}
+              <br className="hidden sm:inline-block" />cu oficii și spații {""}
+              <br className="inline-block sm:hidden"/>comerciale premium{" "}
             </h2>
             <p className={styles.head_content__subtitle}>
               Amplasare strategică la prima linie, str. Calea Ieșilor — o destinație
               <br className="hidden sm:inline-block" /> business emblematică{" "}
-              {""}
-              <br className="inline-block sm:hidden" />
-              pe str. Calea Ieșilor
             </p>
             <p className={styles.head_content__subtitle_mobile}>
-              Panoramă 360°, prima linie Calea Ieșilor
+              Amplasare strategică la prima linie, str. Calea Ieșilor{""}
+              <br />o destinație business emblematică
             </p>
             <button
               type="button"
@@ -778,11 +773,11 @@ const Page = () => {
             >
               descarcă prezentarea pdf
             </button>
-            <p className="block text-[10rem] sm:text-[15rem] text-white text-center mt-[24rem] leading-none">
+            <p className="block text-[10rem] sm:text-[15rem] text-white text-center mt-[22rem] leading-none">
               4,8 evaluare clienți
             </p>
             <svg
-              className="block mt-[12rem] w-[116rem] h-[22rem] sm:w-[156rem] sm:h-[26rem] mx-auto"
+              className="block mt-[10rem] w-[116rem] h-[22rem] sm:w-[156rem] sm:h-[26rem] mx-auto"
               viewBox="0 0 116 22"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

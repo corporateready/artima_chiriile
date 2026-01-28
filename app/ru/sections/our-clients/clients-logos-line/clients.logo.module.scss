@@ -21,10 +21,6 @@
 }
 .carousel__slide {
   @apply w-fit h-auto;
-
-  @media screen and (max-width: 600px) {
-    // @apply p-[28rem];    
-  }
 }
 .business_slider {
   @apply block w-full h-full mt-[90rem];

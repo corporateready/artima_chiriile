@@ -1,5 +1,5 @@
 .business {
-  @apply w-full h-full pt-[170rem];
+  @apply w-full h-full pt-[154rem];
 
   @media screen and (max-width: 600px) {
     @apply pt-[58rem] pl-[15rem];
@@ -39,13 +39,7 @@
     @apply mt-[40rem] ml-0;
   }
 }
-.present_slide__1 {
-  @apply w-[370rem] h-[580rem] bg-[url('../../../../public/sales/business-carousel/business-slide-1.webp')] bg-cover bg-center rounded-[18rem];
 
-  @media screen and (max-width: 600px) {
-    @apply w-[329rem] h-[513rem];
-  }
-}
 .present_slide__2 {
   @apply w-[370rem] h-[580rem] bg-[url('../../../../public/sales/business-carousel/business-slide-2.webp')] bg-cover bg-center rounded-[18rem];
 
@@ -65,6 +59,13 @@
 
       @media screen and (max-width: 600px) {
     @apply w-[329rem] h-[513rem];
+  }
+}
+.present_slide__5 {
+  @apply w-[370rem] h-[580rem] bg-[url('../../../../public/business-slide-5.webp')] bg-cover bg-center rounded-[18rem];
+
+  @media screen and (max-width: 600px) {
+    @apply w-[329rem] h-[496rem];
   }
 }
 .slider__mobile_wrapper {

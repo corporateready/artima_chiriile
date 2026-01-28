@@ -10,8 +10,7 @@ const Index = () => {
           <h6 className={styles.parking__title}>
             <span className={styles.parking__title_top}>
               Capacitatea locurilor de
-            </span>{" "}
-            {""}
+            </span>{""}
             <br className="inline-block" />
             parcare fără precedent în țară
           </h6>
@@ -23,8 +22,9 @@ const Index = () => {
           <p className={styles.parking__text}>
             Securitate 24/7 cu operator care
             <br />
-            monitorizează în timp real camerele din
-            <br />
+            monitorizează în timp real camerele {""}
+            <br className="inline-block sm:hidden" />din {""}
+            <br className="hidden sm:inline-block" />
             parcarea subterană
           </p>
           <p className={styles.parking__text}>

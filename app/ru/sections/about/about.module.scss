@@ -1,5 +1,5 @@
 .about {
-  @apply w-full h-full pt-[90rem] pb-[180rem];
+  @apply w-full h-full pt-[50rem] pb-[180rem];
 
   @media screen and (max-width: 600px) {
     @apply pb-[80rem] pt-[46em] pl-0;
@@ -140,11 +140,11 @@
 }
 
 .about_slide__4 {
-  @media screen and (max-width: 600px) {
-    @apply rounded-none h-[414rem] mt-[120rem] bg-[url('../../../../public/sales/about/about-slide-4-mobile.webp')] bg-cover bg-no-repeat bg-left ml-[-1rem];
-  }
+    @apply rounded-none h-[414rem] mt-[120rem] bg-[url('../../../../public/sales/about/about-slide-4-mobile.webp')] bg-cover bg-no-repeat bg-left ml-[-1rem] relative z-0;
 
-  @apply block w-full mt-[110rem] h-[680rem] bg-[url('../../../../public/sales/about/about-slide-4.webp')] bg-cover bg-center rounded-[18rem] relative z-0;
+  @media screen and (min-width: 600px) {
+    @apply block w-full mt-[110rem] h-[680rem] bg-[url('../../../../public/sales/about/about-slide-4.webp')] bg-cover bg-center rounded-[18rem] relative z-0;
+  }
   
   .slide_description {
   @apply text-[35rem] font-bold leading-[130%] text-white absolute bottom-[56rem] left-[56rem] z-[2] w-full h-auto;

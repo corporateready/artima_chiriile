@@ -1,47 +1,52 @@
 .parking__wrapper {
-  @media screen and (max-width: 600px) {
-    @apply w-full h-[1206rem] mt-[70rem] relative top-0 left-0 z-0 bg-[url('/sales/parking-bg-mobile.webp')] bg-cover bg-no-repeat bg-center mx-auto pt-[42rem];
-  }
-  @apply w-[1260rem] h-[680rem] mt-[170rem] relative top-0 left-0 z-0 bg-[url('/sales/parking-bg-ru.webp')] bg-cover bg-no-repeat bg-center mx-auto pt-[40rem];
+    @apply w-full h-[1070rem] mt-[70rem] relative top-0 left-0 z-0 bg-[url('/sales/parking-bg-mobile.webp')] bg-cover bg-no-repeat bg-center mx-auto pt-[42rem];
+    
+    @media screen and (min-width: 600px) {
+      @apply w-[1260rem] h-[680rem] mt-[170rem] relative top-0 left-0 z-0 bg-[url('/sales/parking-bg.webp')] bg-cover bg-no-repeat bg-center mx-auto pt-[45rem];
+    }
 }
-
 .parking__title {
-  @media screen and (max-width: 600px) {
-    @apply text-[25.2rem] leading-[36rem] ml-[-28rem];
-  }
-  @apply text-[35rem] text-[#ffe9b6] font-bold leading-[40rem] ml-[-24rem] pb-[20rem];
-}
+    @apply text-[26rem] text-[#ffe9b6] font-bold text-center leading-[36rem] pb-[6rem] ml-[-30rem];
+    width: max-content;
+    text-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
 
-.parking__title_top {
-  @media screen and (max-width: 600px) {
-  @apply ml-[4rem];  
+   @media screen and (min-width: 600px) {
+    @apply text-[36rem] font-bold leading-[110%] ml-[-26rem];
+    text-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
   }
-  @apply ml-[8rem];
 }
-
 .parking__inner {
-  @media screen and (max-width: 600px) {
-    @apply flex-col gap-0 mt-[670rem];
+  @apply flex-col gap-0 mt-[550rem];
+
+  @media screen and (min-width: 600px) {
+    @apply flex flex-row self-end w-full mt-[54rem];   
   }
-  @apply flex gap-[140rem] w-full mt-[54rem];
+  
 }
 .parking__list {
-  @media screen and (max-width: 600px) {
-    @apply gap-[26rem] w-full pl-[48rem];
+
+  @apply flex flex-col gap-[30rem] w-full pl-[48rem];
+
+  @media screen and (min-width: 600px) {
+  @apply flex flex-col gap-[57rem] w-[50%] pl-[65rem];  
   }
-  @apply flex flex-col gap-[44rem] w-[50%];
+  
 }
 .parking__text {
-  @media screen and (max-width: 600px) {
-    @apply text-[19rem] font-bold leading-[24rem];
+  @apply text-[20rem] text-[#fff] font-bold leading-[110%] relative z-0;
+
+  @media screen and (min-width: 600px) {
+    @apply text-[24rem] font-bold leading-[26rem];
   }
-  @apply text-[24rem] text-[#fff] font-bold leading-[30rem] relative z-0;
 }
 .parking__text::before {
-  @media screen and (max-width: 600px) {
-    content: '';
-  @apply inline-block absolute top-[8rem] left-[-20rem] z-[1] w-[7rem] h-[7rem] bg-white rounded-full;
-  }
+
   content: '';
-  @apply inline-block absolute top-[8rem] left-[-34rem] z-[1] w-[12rem] h-[12rem] bg-white rounded-full;
+  @apply inline-block absolute top-[8rem] left-[-18rem] z-[1] w-[7rem] h-[7rem] bg-white rounded-full;
+
+  @media screen and (min-width: 600px) {
+    content: '';
+    @apply inline-block absolute top-[6rem] left-[-38rem] z-[1] w-[12rem] h-[12rem] bg-white rounded-full;
+  }
+  
 }

@@ -1,5 +1,5 @@
 .area {
-  @apply w-full h-full pt-[90rem];
+  @apply w-full h-full pt-0;
 
   @media screen and (max-width: 600px) {
     @apply pt-[52rem] pb-0;
@@ -18,7 +18,7 @@
   @apply text-[45rem] font-bold leading-[130%] text-center;
 
   @media screen and (max-width: 600px) {
-    @apply text-[29rem] text-left leading-[138%] ml-[15rem];
+    @apply text-[29rem] text-left leading-[128%] ml-[15rem];
   }
 }
 

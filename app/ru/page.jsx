@@ -1052,7 +1052,7 @@ const Page = () => {
           <div className={styles.sale_header__wrapper}>
             <h2 className={styles.head_content__title}>
               Бизнес-центр {""}
-              <br className="inline-block sm:hidden" />с офисами и премиальными{""}
+              <br className="inline-block sm:hidden" />с офисами и премиальными {""}
               <br className="hidden sm:inline-block " />
                коммерческими площадями
             </h2>
@@ -1061,7 +1061,8 @@ const Page = () => {
               <br className="inline-block" />знаковое бизнес-направление
             </p>
             <p className={styles.head_content__subtitle_mobile}>
-              Панорама 360°, первая линия ул. К. Ешилор
+              Стратегическое расположение на первой линии, 
+              <br />ул. Calea Ieșilor — знаковое бизнес-направление
             </p>
             <button
               type="button"
@@ -1070,11 +1071,11 @@ const Page = () => {
             >
               Скачать PDF-презентацию
             </button>
-            <p className="block text-[10rem] sm:text-[15rem] text-white text-center mt-[23rem] leading-none">
+            <p className="block text-[10rem] sm:text-[15rem] text-white text-center mt-[20rem] sm:mt-[29rem] leading-none">
               4,8 отзывы клиентов
             </p>
             <svg
-              className="block mt-[12rem] w-[116rem] h-[22rem] sm:w-[156rem] sm:h-[26rem] mx-auto"
+              className="block mt-[10rem] sm:mt-[16rem] w-[116rem] h-[22rem] sm:w-[156rem] sm:h-[26rem] mx-auto"
               viewBox="0 0 116 22"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

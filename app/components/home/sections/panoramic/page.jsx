@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import styles from "./panoramic.module.scss";
-import Link from "next/link";
 
 const Page = () => {
   return (
@@ -21,14 +20,22 @@ const Page = () => {
       <div className={styles.panoramic_inner}>
         <div className={styles.panoramic_inner__schema}>
           <div className={styles.schema__img}></div>
+          <div className={styles.schema__img_laptop}>
+          </div>
+          <span className={styles.schema__text_A}>
+            Bloc A
+          </span>
+          <span className={styles.schema__text_B}>
+            Bloc B
+          </span>
           <span className={styles.schema__text__top}>
-            Vedere spre Zity Mall
+            Vedere spre sensul giratoriu Ion Creangă
           </span>
           <span className={styles.schema_text__right}>
             Vedere spre Calea Ieșilor{" "}
           </span>
           <span className={styles.schema_text__bottom}>
-            Vedere spre sensul giratoriu Ion Creangă
+            Vedere spre Zity Mall
           </span>
           <span className={styles.schema_text__left}>Vedere în curte</span>
         </div>
@@ -73,7 +80,7 @@ const Page = () => {
                 </linearGradient>
               </defs>
             </svg>
-            <p className={styles.list_text}>suprafața generoasă 978 m²</p>
+            <p className={styles.list_text}>suprafața generoase</p>
           </div>
           <div className="flex items-center gap-[16rem] sm:gap-[27rem]">
             <svg
@@ -136,7 +143,7 @@ const Page = () => {
               </defs>
             </svg>
             <p className={styles.list_text}>
-              open space – flexibilitate 
+              open space – flexibilitate {""}
               <br className="inline-block sm:hidden" />maximă în amenajare
             </p>
           </div>
@@ -166,8 +173,8 @@ const Page = () => {
               </defs>
             </svg>
             <p className={styles.list_text}>
-              tavane înalte de 3 metri – un 
-              <br className="inline-block sm:hidden"/>spațiu aerisit și modern
+              tavane înalte de 3 sau 4 metri {""}
+              <br className="inline-block sm:hidden"/> un spațiu aerisit și modern
             </p>
           </div>
           <div className="flex items-center gap-[16rem] sm:gap-[27rem]">
