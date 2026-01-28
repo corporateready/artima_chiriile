@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app/useRudderAnalytics.ts -> @rudderstack/analytics-js\":{\"id\":\"app/useRudderAnalytics.ts -> @rudderstack/analytics-js\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_rudderstack_analytics-js_dist_npm_modern_esm_index_mjs.js\"]}}"
