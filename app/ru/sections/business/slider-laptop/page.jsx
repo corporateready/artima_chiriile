@@ -96,14 +96,14 @@ React.useEffect(() => {
               }
               exit={{ opacity: 0, y: 30 }}
               className={`${styles.embla__slide}`}
-              onHoverStart={() => {
-                if (slide.id === 4) {
-                  scrollNext();
-                }
-                if (slide.id === 1) {
-                  scrollPrev();
-                }
-              }}
+              // onHoverStart={() => {
+              //   if (slide.id === 4) {
+              //     scrollNext();
+              //   }
+              //   if (slide.id === 1) {
+              //     scrollPrev();
+              //   }
+              // }}
             >
               <div className={`${slide.slideImg}`}></div>
               <p className="text-[15rem] sm:text-[22rem] text-black mt-[35rem] font-normal leading-[115%]">

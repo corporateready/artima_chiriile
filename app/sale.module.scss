@@ -71,7 +71,7 @@
 }
 
 .head_content__title {
-  @apply text-[26.6rem] text-white font-bold mt-[10rem] leading-[134%] p-0 m-0 text-center w-full;
+  @apply text-[26rem] text-white font-bold mt-[12rem] leading-[134%] p-0 m-0 text-center w-full;
     text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.6);
 
   @media screen and (min-width: 600px) {
@@ -121,7 +121,7 @@
   
 
   @media screen and (max-width: 600px) {
-    @apply flex justify-center w-full text-[17rem] text-center text-white font-normal mt-[6rem] leading-[116%];
+    @apply flex justify-center w-full text-[18rem] text-center text-white font-normal mt-[6rem] leading-[116%];
   }
 }
 .sale_head__btn {
