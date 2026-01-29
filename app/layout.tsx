@@ -43,7 +43,7 @@ export default async function RootLayout({
         <link rel="canonical" href="https://artima.md/factorysolutions" />
        
         {/* Google Tag Manager */}
-        {/* <Script
+        <Script
           async
           dangerouslySetInnerHTML={{
             __html: `
@@ -72,7 +72,7 @@ export default async function RootLayout({
             </iframe>
             `,
           }}
-        /> */}
+        />
       </head>
 
       <body className={`${inter.className} ${roboto.variable}`}>
