@@ -13,7 +13,7 @@ import About from "./sections/about";
 import Footer from "./sections/footer/page";
 import Form from "./form-popup-oficiu";
 import { motion } from "framer-motion";
-import useRudderStackAnalytics from "../useRudderAnalytics";
+// import useRudderStackAnalytics from "../useRudderAnalytics";
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
 // import { useAnalytics } from "../../lib/posthog";
@@ -25,7 +25,7 @@ const Page = () => {
   const eventIdGen = uuidv4();
   const formSubmittedEventId = uuidv4();
 
-  const analytics = useRudderStackAnalytics();
+  // const analytics = useRudderStackAnalytics();
 
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -73,40 +73,40 @@ const Page = () => {
   }, []);
 
   const formSubmitTrack = () => {
-     analytics?.identify("form_submitted", {
-       form_name: "descarca_prezentare_pdf_ro",
-       form_type: "click_form",
-       form_location: "hero",
-       element_location: "bottom_form",
-       element_type: "button",
-       element_text: "trimite",
-       action_type: "click",
-       name: nameValue,
-       phone: phoneValue,
-       email: emailValue,
-       location: userLocation,
-       domain_source: "artima.md/oficiu-978",
-     });
+    //  analytics?.identify("form_submitted", {
+    //    form_name: "descarca_prezentare_pdf_ro",
+    //    form_type: "click_form",
+    //    form_location: "hero",
+    //    element_location: "bottom_form",
+    //    element_type: "button",
+    //    element_text: "trimite",
+    //    action_type: "click",
+    //    name: nameValue,
+    //    phone: phoneValue,
+    //    email: emailValue,
+    //    location: userLocation,
+    //    domain_source: "artima.md/oficiu-978",
+    //  });
 
-     analytics?.track("form_submitted", {
-       form_name: "descarca_prezentare_pdf_ro",
-       form_type: "click_form",
-       form_location: "hero",
-       element_location: "bottom_form",
-       element_type: "button",
-       element_text: "trimite",
-       action_type: "click",
-       name: nameValue,
-       phone: phoneValue,
-       email: emailValue,
-       location: userLocation,
-       domain_source: "artima.md/oficiu-978",
-       fbp: isFBP,
-       fbc: isFBC,
-       eventID: isEventId,
-       pageview_event_id: isPageViewEventId,
-       external_id: isExternalId,
-     });
+    //  analytics?.track("form_submitted", {
+    //    form_name: "descarca_prezentare_pdf_ro",
+    //    form_type: "click_form",
+    //    form_location: "hero",
+    //    element_location: "bottom_form",
+    //    element_type: "button",
+    //    element_text: "trimite",
+    //    action_type: "click",
+    //    name: nameValue,
+    //    phone: phoneValue,
+    //    email: emailValue,
+    //    location: userLocation,
+    //    domain_source: "artima.md/oficiu-978",
+    //    fbp: isFBP,
+    //    fbc: isFBC,
+    //    eventID: isEventId,
+    //    pageview_event_id: isPageViewEventId,
+    //    external_id: isExternalId,
+    //  });
 
      if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
        window.fbq(

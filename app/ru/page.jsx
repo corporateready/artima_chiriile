@@ -12,7 +12,7 @@ import Footer from "./sections/footer/page";
 import Form from "./form-popup-oficiu-ru";
 import Header from "./sections/header-ru"
 import OurClients from "./sections/our-clients"
-import useRudderStackAnalytics from "../useRudderAnalytics";
+// import useRudderStackAnalytics from "../useRudderAnalytics";
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
 
@@ -895,7 +895,7 @@ const Page = () => {
      setIsSlideItem(slideId);
    };
 
-     const analytics = useRudderStackAnalytics();
+    //  const analytics = useRudderStackAnalytics();
 
      const [nameValue, setNameValue] = React.useState("");
      const [emailValue, setEmailValue] = React.useState("");
@@ -934,40 +934,40 @@ const Page = () => {
      }, []);
 
      const formSubmitTrack = () => {
-       analytics?.identify("form_submitted", {
-         form_name: "Скачать PDF-презентацию",
-         form_type: "click_form",
-         form_location: "hero",
-         element_location: "bottom_form",
-         element_type: "button",
-         element_text: "отправить",
-         action_type: "click",
-         name: nameValue,
-         phone: phoneValue,
-         email: emailValue,
-         //  location: userLocation,
-         domain_source: "artima.md/oficiu-978-ru",
-       });
+      //  analytics?.identify("form_submitted", {
+      //    form_name: "Скачать PDF-презентацию",
+      //    form_type: "click_form",
+      //    form_location: "hero",
+      //    element_location: "bottom_form",
+      //    element_type: "button",
+      //    element_text: "отправить",
+      //    action_type: "click",
+      //    name: nameValue,
+      //    phone: phoneValue,
+      //    email: emailValue,
+      //    //  location: userLocation,
+      //    domain_source: "artima.md/oficiu-978-ru",
+      //  });
 
-       analytics?.track("form_submitted", {
-         form_name: "Скачать PDF-презентацию",
-         form_type: "click_form",
-         form_location: "hero",
-         element_location: "bottom_form",
-         element_type: "button",
-         element_text: "отправить",
-         action_type: "click",
-         name: nameValue,
-         phone: phoneValue,
-         email: emailValue,
-         location: userLocation,
-         domain_source: "artima.md/oficiu-978-ru",
-         fbp: isFBP,
-         fbc: isFBC,
-         eventID: isEventId,
-         pageview_event_id: isPageViewEventId,
-         external_id: isExternalId,
-       });
+      //  analytics?.track("form_submitted", {
+      //    form_name: "Скачать PDF-презентацию",
+      //    form_type: "click_form",
+      //    form_location: "hero",
+      //    element_location: "bottom_form",
+      //    element_type: "button",
+      //    element_text: "отправить",
+      //    action_type: "click",
+      //    name: nameValue,
+      //    phone: phoneValue,
+      //    email: emailValue,
+      //    location: userLocation,
+      //    domain_source: "artima.md/oficiu-978-ru",
+      //    fbp: isFBP,
+      //    fbc: isFBC,
+      //    eventID: isEventId,
+      //    pageview_event_id: isPageViewEventId,
+      //    external_id: isExternalId,
+      //  });
 
         if (
           typeof window !== "undefined" &&
@@ -1057,12 +1057,12 @@ const Page = () => {
                коммерческими площадями
             </h2>
             <p className={styles.head_content__subtitle}>
-              Стратегическое расположение на первой линии, ул. Calea Ieșilor {""}
+              Стратегическое расположение на первой линии, ул. Каля Ешилор {""}
               <br className="inline-block" />знаковое бизнес-направление
             </p>
             <p className={styles.head_content__subtitle_mobile}>
               Стратегическое расположение на первой линии, 
-              <br />ул. Calea Ieșilor — знаковое бизнес-направление
+              <br />ул. Каля Ешилор — знаковое бизнес-направление
             </p>
             <button
               type="button"

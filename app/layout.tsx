@@ -60,8 +60,8 @@ export default async function RootLayout({
               })(window,document,'script','dataLayer','GTM-KG9D2CBQ');
             `,
           }}
-        /> */}
-        {/* <noscript
+        />
+        <noscript
           dangerouslySetInnerHTML={{
             __html: `
             <iframe 

@@ -48,23 +48,27 @@
   @apply p-0 m-0 box-border;
 }
 html {
+  font-size: 16px;
   font-size: calc(100vw / (1920 * 1));
   width: 100%;
   @media screen and (max-width: 1640px) {
     font-size: calc(100vw / (1440 * 1));
   }
-
   @media screen and (max-width: 576px) {
     font-size: calc(100vw / (414 * 1));
   }
 }
+
 body {
   @apply h-full w-full max-w-full relative top-0 left-0 z-[-1];
+  font-family: 'SF Pro Display', system-ui, sans-serif;
+  
   background: linear-gradient(180deg, #f0f0f0 0%, #fff 100%);
   .react-tel-input {
     font-family: "Montserrat", sans-serif;
   }
 }
+
 
 .react-tel-input .flag-dropdown {
   @apply w-[65rem] rounded-none;

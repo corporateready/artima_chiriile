@@ -13,7 +13,7 @@ import About from "./components/home/sections/about";
 import Footer from "./components/home/sections/footer/page";
 import Form from "./components/home/form-popup-oficiu";
 import { motion } from "framer-motion";
-import useRudderStackAnalytics from "./useRudderAnalytics";
+// import useRudderStackAnalytics from "./useRudderAnalytics";
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
 
@@ -23,7 +23,7 @@ const Page = () => {
   const eventIdGen = uuidv4();
   const formSubmittedEventId = uuidv4();
 
-  const analytics = useRudderStackAnalytics();
+  // const analytics = useRudderStackAnalytics();
 
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -71,40 +71,40 @@ const Page = () => {
   }, []);
 
   const formSubmitTrack = () => {
-     analytics?.identify("form_submitted", {
-       form_name: "descarca_prezentare_pdf_ro",
-       form_type: "click_form",
-       form_location: "hero",
-       element_location: "bottom_form",
-       element_type: "button",
-       element_text: "trimite",
-       action_type: "click",
-       name: nameValue,
-       phone: phoneValue,
-       email: emailValue,
-       location: userLocation,
-       domain_source: "artima.md/oficiu-978",
-     });
+    //  analytics?.identify("form_submitted", {
+    //    form_name: "descarca_prezentare_pdf_ro",
+    //    form_type: "click_form",
+    //    form_location: "hero",
+    //    element_location: "bottom_form",
+    //    element_type: "button",
+    //    element_text: "trimite",
+    //    action_type: "click",
+    //    name: nameValue,
+    //    phone: phoneValue,
+    //    email: emailValue,
+    //    location: userLocation,
+    //    domain_source: "artima.md/oficiu-978",
+    //  });
 
-     analytics?.track("form_submitted", {
-       form_name: "descarca_prezentare_pdf_ro",
-       form_type: "click_form",
-       form_location: "hero",
-       element_location: "bottom_form",
-       element_type: "button",
-       element_text: "trimite",
-       action_type: "click",
-       name: nameValue,
-       phone: phoneValue,
-       email: emailValue,
-       location: userLocation,
-       domain_source: "artima.md/oficiu-978",
-       fbp: isFBP,
-       fbc: isFBC,
-       eventID: isEventId,
-       pageview_event_id: isPageViewEventId,
-       external_id: isExternalId,
-     });
+    //  analytics?.track("form_submitted", {
+    //    form_name: "descarca_prezentare_pdf_ro",
+    //    form_type: "click_form",
+    //    form_location: "hero",
+    //    element_location: "bottom_form",
+    //    element_type: "button",
+    //    element_text: "trimite",
+    //    action_type: "click",
+    //    name: nameValue,
+    //    phone: phoneValue,
+    //    email: emailValue,
+    //    location: userLocation,
+    //    domain_source: "artima.md/oficiu-978",
+    //    fbp: isFBP,
+    //    fbc: isFBC,
+    //    eventID: isEventId,
+    //    pageview_event_id: isPageViewEventId,
+    //    external_id: isExternalId,
+    //  });
 
      if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
        window.fbq(
@@ -753,11 +753,11 @@ const Page = () => {
         <Header />
         <div className={styles.sale_head__content}>
           <div className={styles.sale_header__wrapper}>
-            <h2 className={styles.head_content__title}>
+            <p className={`${styles.head_content__title} safariH2`}>
               <span>Business centru </span>{""}
               <br className="hidden sm:inline-block" />cu oficii și spații {""}
               <br className="inline-block sm:hidden"/>comerciale premium{" "}
-            </h2>
+            </p>
             <p className={styles.head_content__subtitle}>
               Amplasare strategică la prima linie, str. Calea Ieșilor — o destinație
               <br className="hidden sm:inline-block" /> business emblematică{" "}

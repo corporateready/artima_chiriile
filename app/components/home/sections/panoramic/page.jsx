@@ -8,7 +8,7 @@ const Page = () => {
       <div className={styles.panoramic_wrapper}>
         <p className={styles.panoramic_title}>
           <span className={styles.panoramic_text__yellow}>
-            Oficiu spre vânzare {""}
+            Oficii spre vânzare {""}
           </span>
           <br className="inline-block sm:hidden" />
           cu reparație inclusă cadou <br />
@@ -80,7 +80,7 @@ const Page = () => {
                 </linearGradient>
               </defs>
             </svg>
-            <p className={styles.list_text}>suprafața generoase</p>
+            <p className={styles.list_text}>suprafețe generoase</p>
           </div>
           <div className="flex items-center gap-[16rem] sm:gap-[27rem]">
             <svg
