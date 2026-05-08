@@ -934,40 +934,6 @@ const Page = () => {
      }, []);
 
      const formSubmitTrack = () => {
-      //  analytics?.identify("form_submitted", {
-      //    form_name: "Скачать PDF-презентацию",
-      //    form_type: "click_form",
-      //    form_location: "hero",
-      //    element_location: "bottom_form",
-      //    element_type: "button",
-      //    element_text: "отправить",
-      //    action_type: "click",
-      //    name: nameValue,
-      //    phone: phoneValue,
-      //    email: emailValue,
-      //    //  location: userLocation,
-      //    domain_source: "artima.md/oficiu-978-ru",
-      //  });
-
-      //  analytics?.track("form_submitted", {
-      //    form_name: "Скачать PDF-презентацию",
-      //    form_type: "click_form",
-      //    form_location: "hero",
-      //    element_location: "bottom_form",
-      //    element_type: "button",
-      //    element_text: "отправить",
-      //    action_type: "click",
-      //    name: nameValue,
-      //    phone: phoneValue,
-      //    email: emailValue,
-      //    location: userLocation,
-      //    domain_source: "artima.md/oficiu-978-ru",
-      //    fbp: isFBP,
-      //    fbc: isFBC,
-      //    eventID: isEventId,
-      //    pageview_event_id: isPageViewEventId,
-      //    external_id: isExternalId,
-      //  });
 
         if (
           typeof window !== "undefined" &&

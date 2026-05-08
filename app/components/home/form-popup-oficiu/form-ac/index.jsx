@@ -20,10 +20,9 @@ const Page = ({
   return (
     <form
       method="POST"
-      action="https://eu.customerioforms.com/forms/submit_action?site_id=4367d44fa648e87be6fe&form_id=03855c6653bc4ec&success_url=https://artima.md/thank-you"
+      action="https://eu.customerioforms.com/forms/submit_action?site_id=4367d44fa648e87be6fe&form_id=03855c6653bc4ec&success_url=https://artima.md/"
       id="_form_1_"
       className=""
-      // onSubmit={handleSubmit}
       noValidate
       data-styles-version="4"
     >

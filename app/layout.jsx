@@ -1,5 +1,4 @@
 import React from "react";
-import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Roboto } from "next/font/google";
 import "./globals.scss";
@@ -14,7 +13,7 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Oficii spre chirie ARTIMA Business & Lifestyle",
   description:
     "ARTIMA Business & Lifestyle oferă spre închiriere birouri moderne echipate cu facilități excepționale, încadrate într-un ecosistem complet dedicat unui antreprenoriat productiv și eficient.",
@@ -23,27 +22,14 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
 }) {
  
   return (
     <html lang="ro" >
       <head>
-        <link rel="canonical" href="https://artima.md/terms" />
-        <link rel="canonical" href="https://artima.md/policy-privacy" />
-        <link rel="canonical" href="https://artima.md/ru" />
-        <link rel="canonical" href="https://artima.md/oficiu-978" />
-        <link rel="canonical" href="https://artima.md/oficiu-978-ru" />
-        <link rel="canonical" href="https://artima.md/booking" />
-        <link rel="canonical" href="https://artima.md/booking-ru" />
-        <link rel="canonical" href="https://artima.md/about" />
-        <link rel="canonical" href="https://artima.md/thank-you" />
-        <link rel="canonical" href="https://artima.md/thank-you-ru" />
-        <link rel="canonical" href="https://artima.md/factorysolutions" />
        
         {/* Google Tag Manager */}
-        <Script
+        {/* <Script
           async
           dangerouslySetInnerHTML={{
             __html: `
@@ -72,7 +58,7 @@ export default async function RootLayout({
             </iframe>
             `,
           }}
-        />
+        /> */}
       </head>
 
       <body className={`${inter.className} ${roboto.variable}`}>

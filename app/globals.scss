@@ -7,7 +7,6 @@
     font-family: 'SF Pro Display';
     src: url('/fonts/SFProDisplay-Medium.eot');
     src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
-        // url('SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
         url('/fonts/SFProDisplay-Medium.woff2') format('woff2'),
         url('/fonts/SFProDisplay-Medium.woff') format('woff');
     font-weight: 500;
@@ -47,6 +46,7 @@
 * {
   @apply p-0 m-0 box-border;
 }
+
 html {
   font-size: 16px;
   font-size: calc(100vw / (1920 * 1));
