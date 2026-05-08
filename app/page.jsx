@@ -13,7 +13,6 @@ import About from "./components/home/sections/about";
 import Footer from "./components/home/sections/footer/page";
 import Form from "./components/home/form-popup-oficiu";
 import { motion } from "framer-motion";
-// import useRudderStackAnalytics from "./useRudderAnalytics";
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
 
@@ -22,8 +21,6 @@ const PIXEL_ID = process.env.NEXT_PUBLIC_PIXEL_ID;
 const Page = () => {
   const eventIdGen = uuidv4();
   const formSubmittedEventId = uuidv4();
-
-  // const analytics = useRudderStackAnalytics();
 
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -71,46 +68,12 @@ const Page = () => {
   }, []);
 
   const formSubmitTrack = () => {
-    //  analytics?.identify("form_submitted", {
-    //    form_name: "descarca_prezentare_pdf_ro",
-    //    form_type: "click_form",
-    //    form_location: "hero",
-    //    element_location: "bottom_form",
-    //    element_type: "button",
-    //    element_text: "trimite",
-    //    action_type: "click",
-    //    name: nameValue,
-    //    phone: phoneValue,
-    //    email: emailValue,
-    //    location: userLocation,
-    //    domain_source: "artima.md/oficiu-978",
-    //  });
-
-    //  analytics?.track("form_submitted", {
-    //    form_name: "descarca_prezentare_pdf_ro",
-    //    form_type: "click_form",
-    //    form_location: "hero",
-    //    element_location: "bottom_form",
-    //    element_type: "button",
-    //    element_text: "trimite",
-    //    action_type: "click",
-    //    name: nameValue,
-    //    phone: phoneValue,
-    //    email: emailValue,
-    //    location: userLocation,
-    //    domain_source: "artima.md/oficiu-978",
-    //    fbp: isFBP,
-    //    fbc: isFBC,
-    //    eventID: isEventId,
-    //    pageview_event_id: isPageViewEventId,
-    //    external_id: isExternalId,
-    //  });
 
      if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
        window.fbq(
          "track",
          "Lead",
-         {},
+        //  {},
          {
            eventID: isFormSubmittedEventId,
            fbc: isFBC,
@@ -774,7 +737,7 @@ const Page = () => {
               descarcă prezentarea pdf
             </button>
             <p className="block text-[10rem] sm:text-[15rem] text-white text-center mt-[22rem] leading-none">
-              4,8 evaluare clienți
+              4,5 evaluare clienți
             </p>
             <svg
               className="block mt-[10rem] w-[116rem] h-[22rem] sm:w-[156rem] sm:h-[26rem] mx-auto"

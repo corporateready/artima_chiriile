@@ -1082,7 +1082,7 @@ const Page = () => {
               Скачать PDF-презентацию
             </button>
             <p className="block text-[10rem] sm:text-[15rem] text-white text-center mt-[23rem] leading-none">
-              4,8 отзывы клиентов
+              4,5 отзывы клиентов
             </p>
             <svg
               className="block mt-[12rem] w-[116rem] h-[22rem] sm:w-[156rem] sm:h-[26rem] mx-auto"
