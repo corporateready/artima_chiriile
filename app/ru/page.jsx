@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./sale.module.scss";
 import Multi from "./sections/multi";
 import Area from "./sections/area";
-// import Parking from "./sections/parking"
+import Parking from "./sections/parking"
 import Business from "./sections/business/page";
 import Panoramic from "./sections/panoramic/page";
 import Location from "./sections/location/page"
@@ -12,7 +12,6 @@ import Footer from "./sections/footer/page";
 import Form from "./form-popup-oficiu-ru";
 import Header from "./sections/header-ru"
 import OurClients from "./sections/our-clients"
-// import useRudderStackAnalytics from "../useRudderAnalytics";
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
 
@@ -895,8 +894,6 @@ const Page = () => {
      setIsSlideItem(slideId);
    };
 
-    //  const analytics = useRudderStackAnalytics();
-
      const [nameValue, setNameValue] = React.useState("");
      const [emailValue, setEmailValue] = React.useState("");
      const [phoneValue, setPhoneValue] = React.useState("+373");
@@ -1089,7 +1086,7 @@ const Page = () => {
         isItemToggle={isItemToggle}
       />
       <Area handleTogglePopup={handleTogglePopup} />
-      {/* <Parking /> */}
+      <Parking />
       <Business />
       <Panoramic />
       <Location />

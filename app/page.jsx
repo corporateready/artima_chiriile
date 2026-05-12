@@ -5,7 +5,7 @@ import Header from "./components/home/sections/header";
 import Clients from "./components/home/sections/our-clients";
 import Multi from "./components/home/sections/multi";
 import Area from "./components/home/sections/area";
-// import Parking from "./components/home/sections/parking";
+import Parking from "./components/home/sections/parking";
 import Business from "./components/home/sections/business/page";
 import Panoramic from "./components/home/sections/panoramic/page";
 import Location from "./components/home/sections/location/page";
@@ -788,7 +788,7 @@ const Page = () => {
         isItemToggle={isItemToggle}
       />
       <Area handleTogglePopup={handleTogglePopup} />
-      {/* <Parking /> */}
+      <Parking />
       <Business />
       <Panoramic />
       <Location />

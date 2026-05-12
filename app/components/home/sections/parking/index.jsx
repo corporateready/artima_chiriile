@@ -27,11 +27,6 @@ const Index = () => {
             <br className="hidden sm:inline-block" />
             parcarea subterană
           </p>
-          <p className={styles.parking__text}>
-            Locuri de parcare rezervate lunar sau
-            <br />
-            tarifate pe oră
-          </p>
         </div>
       </div>
     </div>
