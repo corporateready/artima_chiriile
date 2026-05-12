@@ -458,3 +458,27 @@ publish = ".next"
   from = "/*"
   to = "/index.html"
   status = 200
+
+  [[redirects]]
+  from = "/oficiu-978"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/oficiu-978/"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/oficiu-978-ru"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/oficiu-978-ru/"
+  to = "/404"
+  status = 404
+  force = true
