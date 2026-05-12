@@ -3,4 +3,458 @@ command = "npm run build"
 publish = ".next"
 
 [[plugins]]
-package = "@netlify/plugin-nextjs"
+  package = "@netlify/plugin-nextjs"
+
+# =============================================================================
+# HEADERS — Security & Performance
+# =============================================================================
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# =============================================================================
+# REDIRECTS — Company ClickUp Forms (301)
+# Base form: https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3
+# =============================================================================
+
+[[redirects]]
+  from = "/damicomutilaje"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=DAMICOM%20UTILAJE%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vendologistic"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=VENDO%20LOGISTIC%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/qmsystem"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=QUALITY%20MANAGEMENT%20SYSTEM%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/valedesign-cons"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=VALEDESIGN%20CONS%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/launchspectrumllc"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=LAUNCH%20SPECTRUM%20LLC%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dcg"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=DEVELOPMENT%20CONCEPT%20GROUP%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gdmarauto"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=GD%20MAR%20AUTO%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ecarlogistic"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=E-CAR%20LOGISTIC%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fulgertransport"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=FULGER%20TRANSPORT%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/apifera"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=APIFERA"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/imasologistics"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=IMASO%20LOGISTICS%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dafitconcept"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=DA%20FIT%20CONCEPT%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/supportlink"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=SUPPORT%20LINK%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/solovovjewelry"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=SOLOVOV%20JEWELRY%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cazm"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=CABINETUL%20AVOCATULUI%20ZERO%20MIHAIL%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mvvtur"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=MVV%20TUR%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/iqclinicaldesign"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=IQ%20CLINICAL%20DESIGN%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/redlinetech"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=REDLINE%20TECH%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arh-consult"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=ARH-CONSULT%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/factorysolutions"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=FACTORY%20SOLUTIONS%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/neuroscan"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=CERCETARI%20MEDICALE%20PRIVATE%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guardtec"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=GUARD%20TEC%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/slatavagrup"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=SLATAVA%20GRUP%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/marcodor"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=MARCODOR%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/chemix"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=CHEMIX%20AGRO%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/imoelite"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=IMOELITE%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/firstmedia"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=FIRST%20MEDIA%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/golbantrade"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=GOLBAN%20TRADE%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sim"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=SIM%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/maviromtrans"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=MAVIROM%20TRANS%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/micafe"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=CIORICI%20IULIAN%20II"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/impexart"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=IMPEXART%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/picicurovserghei"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=PICICUROV%20SERGHEI"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/friendlyschool"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=FRIENDLY%20SCHOOL%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vicolcarmina"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=VICOL%20CARMINA"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gabujavictoria"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=GABUJA%20VICTORIA"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/aclocicovalab"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=ACLOCICOVA%20LAB%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mariansimion"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=MARIAN%20SIMION"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/riolitsistem"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=RIOLIT%20SISTEM%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/snejinscaianelly"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=SNEJINSCAIA%20NELLY"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/romanescu&co"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=ROMANESCU%20CO%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/roexpert"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=RO%20EXPERT%20ENERGY%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/imas"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=IMAS%20CERCETARE%20SI%20STRATEGII%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/binaagency"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=BINA%20AGENCY%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/romonax"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=ROMONA%20X%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dynatech"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=DYNATECH%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/saiman85"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=SAIMAN%2085%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dovapromo"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=DOVA%20PROMO%20SRL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/next"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=NEXT"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/flo"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=FLO"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=LOCAL"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jysk"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=JYSK"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tnasportsagency"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18475/ZGMQ8915PQE401MZX3?company_name=TNA%20SPORTS%20AGENCY%20SRL"
+  status = 301
+  force = true
+
+# =============================================================================
+# REDIRECTS — Feedback QR (Lift)
+# Base form: https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09
+# =============================================================================
+
+[[redirects]]
+  from = "/feedback-qr-lift-tehnic"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_lift_type=tehnic&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-lift-marfar"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_lift_type=marfar&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-lift-business1"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_lift_type=business1&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-lift-business2"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_lift_type=business2&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-lift-comercial"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_lift_type=comercial&Feedback_medium=qr"
+  status = 301
+  force = true
+
+# =============================================================================
+# REDIRECTS — Feedback QR (WC — Bloc A)
+# =============================================================================
+
+[[redirects]]
+  from = "/feedback-qr-wc-bloca-p"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=p&source_bloc=a&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-wc-bloca-2"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=2&source_bloc=a&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-wc-bloca-3"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=3&source_bloc=a&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-wc-bloca-4"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=4&source_bloc=a&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-wc-bloca-5"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=5&source_bloc=a&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-wc-bloca-6"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=6&source_bloc=a&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-wc-bloca-7"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=7&source_bloc=a&Feedback_medium=qr"
+  status = 301
+  force = true
+
+# =============================================================================
+# REDIRECTS — Feedback QR (WC — Bloc B)
+# =============================================================================
+
+[[redirects]]
+  from = "/feedback-qr-wc-blocb-2"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=2&source_bloc=b&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-wc-blocb-3"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=3&source_bloc=b&Feedback_medium=qr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feedback-qr-wc-blocb-4"
+  to = "https://forms.clickup.com/2596650/f/2f7ta-18195/JXLBIVZJ5OKC6CGY09?source_type=wc&source_etaj=4&source_bloc=b&Feedback_medium=qr"
+  status = 301
+  force = true
+
+# =============================================================================
+# CATCH-ALL — Next.js SPA fallback (must be LAST)
+# Netlify + @netlify/plugin-nextjs handles this automatically,
+# but kept explicit for static export fallback compatibility.
+# =============================================================================
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
