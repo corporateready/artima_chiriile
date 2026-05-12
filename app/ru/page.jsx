@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./sale.module.scss";
 import Multi from "./sections/multi";
 import Area from "./sections/area";
-import Parking from "./sections/parking"
+// import Parking from "./sections/parking"
 import Business from "./sections/business/page";
 import Panoramic from "./sections/panoramic/page";
 import Location from "./sections/location/page"
@@ -1089,7 +1089,7 @@ const Page = () => {
         isItemToggle={isItemToggle}
       />
       <Area handleTogglePopup={handleTogglePopup} />
-      <Parking />
+      {/* <Parking /> */}
       <Business />
       <Panoramic />
       <Location />
