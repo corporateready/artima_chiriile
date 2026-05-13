@@ -12,6 +12,8 @@
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",
     "@customerio/cdp-analytics-node": "^0.2.2",
+    "@keystatic/core": "^0.5.50",
+    "@keystatic/next": "^5.0.4",
     "@netlify/plugin-nextjs": "^4.41.2",
     "@radix-ui/react-slot": "^1.1.1",
     "@react-google-maps/api": "^2.20.6",

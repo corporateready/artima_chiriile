@@ -20,14 +20,10 @@ export const metadata = {
   icons: [{ rel: "icon", url: Favicon.src }],
 };
 
-export default async function RootLayout({
-  children,
-}) {
- 
+export default async function RootLayout({ children }) {
   return (
-    <html lang="ro" >
+    <html lang="ro">
       <head>
-       
         {/* Google Tag Manager */}
         <Script
           async
@@ -47,6 +43,9 @@ export default async function RootLayout({
             `,
           }}
         />
+      </head>
+
+      <body className={`${inter.className} ${roboto.variable}`}>
         <noscript
           dangerouslySetInnerHTML={{
             __html: `
@@ -59,12 +58,8 @@ export default async function RootLayout({
             `,
           }}
         />
-      </head>
-
-      <body className={`${inter.className} ${roboto.variable}`}>
         {children}
-      </body>   
-
+      </body>
     </html>
   );
 }
