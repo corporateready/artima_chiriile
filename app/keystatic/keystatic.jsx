@@ -1,5 +1,0 @@
-'use client'
-import { makePage } from '@keystatic/next/ui/app'
-import keystaticConfig from '../../keystatic.config.js'
-
-export default makePage(keystaticConfig)
