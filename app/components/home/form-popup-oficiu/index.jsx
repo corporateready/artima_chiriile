@@ -47,7 +47,6 @@ if (lineElement) {
       animate={{ opacity: 1, transition: { ease: "easeInOut", duration: 0.3 } }}
       exit={{ opacity: 0 }}
       className={styles.form__overview}
-      onClick={() => handleTogglePopup()}
     >
       <div
         className={styles.form__wrapper}
