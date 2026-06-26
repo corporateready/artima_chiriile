@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
 import "./form.scss";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 export default function Page({
   isMobile,
@@ -44,7 +44,46 @@ export default function Page({
           placeholder="E-mail"
         />
 
-        <div className="flex items-center border-none rounded-[6rem] mt-[20rem] sm:mt-[24rem]">
+         <div className="flex items-center border-[1rem] border-[#c4c4c4] rounded-full mt-[18rem] sm:mt-[24rem]">
+                  <PhoneInput
+                    inputProps={{
+                      id: "phone",
+                      name: "phone",
+                      autoComplete: "tel",
+                      inputMode: "any",
+                    }}
+                    inputStyle={{
+                      borderRadius: "30px",
+                    }}
+                    value={phoneValue ?? ""}
+                    onChange={(value) => {
+                      setPhoneValue(value);
+                    }}
+                    required
+                    defaultCountry="md"
+                    placeholder="XX XXX XXX"
+                    disableDialCodeAndPrefix
+                    showDisabledDialCodeAndPrefix
+                    inputClassName="bg-white text-[16rem] placeholder:text-[16rem] placeholder:text-[#7d7f80]"
+                    style={
+                      {
+                        "--react-international-phone-background-color": "none",
+                        "--react-international-phone-text-color": "#7D7F80",
+                        "--react-international-phone-border-color": "transparent",
+                        "--react-international-phone-width": "100%",
+                        "--react-international-phone-height": "56rem",
+                        "--react-international-phone-dropdown-item-background-color": "#FAF9F8",
+                        "--react-international-phone-dropdown-top": "40px",
+                        "--react-international-phone-font-size": "16px",
+                        "--react-international-phone-flag-width": "20rem",
+                        "--react-international-phone-country-selector-background-color": "#F2F2F2",
+                        "--react-international-phone-country-selector-arrow-size": "0px",
+                      }
+                    }
+                  />
+                </div>
+
+        {/* <div className="flex items-center border-none rounded-[6rem] mt-[20rem] sm:mt-[24rem]">
           <PhoneInput
             isValid={(value, country) => {
               if (value.match(/3730/)) {
@@ -66,7 +105,7 @@ export default function Page({
             value={phoneValue}
             onChange={setPhoneValue}
           />
-        </div>
+        </div> */}
 
         <input type="hidden" name="language" value={"ru"} />
 

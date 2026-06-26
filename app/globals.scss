@@ -70,41 +70,56 @@ body {
 }
 
 
-.react-tel-input .flag-dropdown {
-  @apply w-[65rem] rounded-none;
-  border-radius: 35rem 0 0 35rem !important;
+// .react-tel-input .flag-dropdown {
+//   @apply w-[65rem] rounded-none;
+//   border-radius: 35rem 0 0 35rem !important;
   
-  @media screen and (max-width: 576px) {
-    @apply p-[5.5vw] w-[60rem];
-  }
-}
+//   @media screen and (max-width: 576px) {
+//     @apply p-[5.5vw] w-[60rem];
+//   }
+// }
 
-.react-tel-input .flag-dropdown .selected-flag {
-  @apply pl-[25rem] ;
+// .react-tel-input .flag-dropdown .selected-flag {
+//   @apply pl-[25rem] ;
+//   border-radius: 35rem 0 0 35rem !important;
+// }
+
+// .react-tel-input .flag-dropdown .selected-flag > div > .arrow {
+//   @apply hidden;
+// }
+
+// .react-tel-input input.form-control {
+//   @media screen and (max-width: 600px) {
+//     @apply h-[44rem];
+//   }
+//   @apply bg-none w-full pl-[77rem] h-[56rem];
+
+//   @media screen and (min-width: 1640px) {
+//     @apply pl-[90rem] ;
+//   }
+// }
+
+// .react-tel-input .form-control {
+//   @media screen and (max-width: 600rem) {
+//     @apply text-[12rem];
+//   }
+// }
+
+.react-international-phone-country-selector-button {
+  @apply w-[60rem] h-[56rem] bg-[#f5f5f5] rounded-none border-t-0 border-b-0 border-l-0 border-r-[1rem] border-[#c4c4c4] !important;
   border-radius: 35rem 0 0 35rem !important;
-}
-
-.react-tel-input .flag-dropdown .selected-flag > div > .arrow {
-  @apply hidden;
-}
-
-.react-tel-input input.form-control {
   @media screen and (max-width: 600px) {
-    @apply h-[44rem];
-  }
-  @apply bg-none w-full pl-[77rem] h-[56rem];
-
-  @media screen and (min-width: 1640px) {
-    @apply pl-[90rem] ;
+    @apply w-[60rem] h-[44rem];
   }
 }
 
-.react-tel-input .form-control {
-  @media screen and (max-width: 600rem) {
-    @apply text-[12rem];
-  }
+.react-international-phone-country-selector-dropdown {
+  @apply focus-within:outline-none mt-[16rem] rounded-none !important;
 }
 
+.react-international-phone-country-selector-button__button-content {
+  @apply ml-[6rem] !important;
+}
 
 @layer base {
   :root {
