@@ -109,8 +109,8 @@ const Page = ({
                 : "56rem",
               "--react-international-phone-dropdown-item-background-color":
                 "#FAF9F8",
-              "--react-international-phone-dropdown-top": "40px",
-              "--react-international-phone-font-size": "16px",
+              "--react-international-phone-dropdown-top": "40rem",
+              "--react-international-phone-font-size": isMobile ? "14rem" : "16rem",
               "--react-international-phone-flag-width": "20rem",
               "--react-international-phone-country-selector-background-color":
                 "#F2F2F2",
