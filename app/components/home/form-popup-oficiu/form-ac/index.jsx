@@ -3,6 +3,15 @@ import React from "react";
 import "./form.scss";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import {
+  CUSTOM_COUNTRY_FORMATS,
+  DEFAULT_LOCAL_MASK,
+  getCountryMask,
+  phoneCountries,
+  normalizeLocalDigits,
+  buildPhoneValue,
+  maskToPlaceholder,
+} from "../../../../../lib/lib-validate";
 
 const Page = ({
   formSubmitTrack,
@@ -15,7 +24,15 @@ const Page = ({
   userLocation,
   isMobile,
 }) => {
- 
+  const [selectedCountry, setSelectedCountry] = React.useState({
+    iso2: "md",
+    dialCode: "373",
+    format: CUSTOM_COUNTRY_FORMATS.md,
+  });
+
+  const currentMask = getCountryMask(selectedCountry);
+  const currentPlaceholder = maskToPlaceholder(currentMask);
+
   return (
     <form
       method="POST"
@@ -48,40 +65,57 @@ const Page = ({
         />
         <div className="flex items-center border-[1rem] border-[#c4c4c4] rounded-full mt-[18rem] sm:mt-[24rem]">
           <PhoneInput
+            countries={phoneCountries}
             inputProps={{
               id: "phone",
               name: "phone",
-              autoComplete: "tel",
-              inputMode: "any",
+              autoComplete: "tel-national",
+              inputMode: "numeric",
+              pattern: "[0-9]*",
             }}
             inputStyle={{
               borderRadius: "30px",
+              padding: "0px",
             }}
-            value={phoneValue ?? ""}
-            onChange={(value) => {
-              setPhoneValue(value);
+            value={phoneValue}
+            onChange={(value, meta) => {
+              const country = meta.country;
+
+              setSelectedCountry(country);
+
+              const localDigits = normalizeLocalDigits(
+                meta.inputValue,
+                country,
+              );
+
+              setPhoneValue(buildPhoneValue(country, localDigits));
             }}
             required
             defaultCountry="md"
-            placeholder="XX XXX XXX"
+            placeholder={currentPlaceholder}
+            defaultMask={DEFAULT_LOCAL_MASK}
+            allowMaskOverflow={false}
+            disableCountryGuess
             disableDialCodeAndPrefix
             showDisabledDialCodeAndPrefix
             inputClassName="bg-white text-[16rem] placeholder:text-[16rem] placeholder:text-[#7d7f80]"
-            style={
-              {
-                "--react-international-phone-background-color": "none",
-                "--react-international-phone-text-color": "#7D7F80",
-                "--react-international-phone-border-color": "transparent",
-                "--react-international-phone-width": "100%",
-                "--react-international-phone-height": "56rem",
-                "--react-international-phone-dropdown-item-background-color": "#FAF9F8",
-                "--react-international-phone-dropdown-top": "40px",
-                "--react-international-phone-font-size": "16px",
-                "--react-international-phone-flag-width": "20rem",
-                "--react-international-phone-country-selector-background-color": "#F2F2F2",
-                "--react-international-phone-country-selector-arrow-size": "0px",
-              }
-            }
+            style={{
+              "--react-international-phone-background-color": "none",
+              "--react-international-phone-text-color": "#7D7F80",
+              "--react-international-phone-border-color": "transparent",
+              "--react-international-phone-width": "100%",
+              "--react-international-phone-height": isMobile
+                ? "44rem"
+                : "56rem",
+              "--react-international-phone-dropdown-item-background-color":
+                "#FAF9F8",
+              "--react-international-phone-dropdown-top": "40px",
+              "--react-international-phone-font-size": "16px",
+              "--react-international-phone-flag-width": "20rem",
+              "--react-international-phone-country-selector-background-color":
+                "#F2F2F2",
+              "--react-international-phone-country-selector-arrow-size": "0px",
+            }}
           />
         </div>
         <input type="hidden" name="language" value={"ro"} />
