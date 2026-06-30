@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import "./form.scss";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
@@ -23,7 +24,9 @@ const Page = ({
   setPhoneValue,
   userLocation,
   isMobile,
+  handleTogglePopup
 }) => {
+  const router = useRouter();
   const [selectedCountry, setSelectedCountry] = React.useState({
     iso2: "md",
     dialCode: "373",
@@ -33,14 +36,61 @@ const Page = ({
   const currentMask = getCountryMask(selectedCountry);
   const currentPlaceholder = maskToPlaceholder(currentMask);
 
+  const handleDesktopEnterNext = React.useCallback(
+    (event, nextElementId) => {
+      if (isMobile || event.key !== "Enter") return;
+
+      event.preventDefault();
+
+      const nextElement = document.getElementById(nextElementId);
+      nextElement?.focus();
+    },
+    [isMobile],
+  );
+
+  const isSubmitDisabled =
+    nameValue.length < 3 || !emailValue.includes("@") || phoneValue.length < 12;
+
+    const clearForm = () => {
+      setNameValue("");
+      setEmailValue("");
+      setPhoneValue("");
+    };
+
+  const handleSubmit = React.useCallback(
+  (event) => {
+    event.preventDefault();
+
+    if (isSubmitDisabled) {
+      setIsOpen(true);
+      return;
+    }
+
+    formSubmitTrack();
+
+    setTimeout(() => {
+      clearForm();
+    }, 1000);
+    
+
+    setTimeout(() => {
+      clearForm();
+      handleTogglePopup();
+
+    router.replace("/");
+    }, 2000);
+  },
+  [isSubmitDisabled, formSubmitTrack, router],
+);
+
   return (
     <form
-      method="POST"
-      action="https://eu.customerioforms.com/forms/submit_action?site_id=4367d44fa648e87be6fe&form_id=03855c6653bc4ec&success_url=https://artima.md/"
       id="_form_1_"
+      method="POST"
       className=""
       noValidate
       data-styles-version="4"
+      onSubmit={handleSubmit}
     >
       <div className="w-[352rem] sm:w-[454rem] mx-auto pb-[32rem] sm:pb-[50rem]">
         <input
@@ -51,6 +101,7 @@ const Page = ({
           value={nameValue}
           onChange={(e) => setNameValue(e.target.value)}
           placeholder={"Nume, Prenume"}
+          onKeyDown={(e) => handleDesktopEnterNext(e, "email")}
           required
         />
         <input
@@ -61,6 +112,7 @@ const Page = ({
           value={emailValue}
           onChange={(e) => setEmailValue(e.target.value)}
           required
+          onKeyDown={(e) => handleDesktopEnterNext(e, "phone")}
           placeholder="E-mail"
         />
         <div className="flex items-center border-[1rem] border-[#c4c4c4] rounded-full mt-[18rem] sm:mt-[24rem]">
@@ -69,9 +121,11 @@ const Page = ({
             inputProps={{
               id: "phone",
               name: "phone",
+              type: "tel",
               autoComplete: "tel-national",
               inputMode: "numeric",
               pattern: "[0-9]*",
+              onKeyDown: (e) => handleDesktopEnterNext(e, "_form_1_submit"),
             }}
             inputStyle={{
               borderRadius: "30px",
@@ -110,7 +164,9 @@ const Page = ({
               "--react-international-phone-dropdown-item-background-color":
                 "#FAF9F8",
               "--react-international-phone-dropdown-top": "40rem",
-              "--react-international-phone-font-size": isMobile ? "14rem" : "16rem",
+              "--react-international-phone-font-size": isMobile
+                ? "14rem"
+                : "16rem",
               "--react-international-phone-flag-width": "20rem",
               "--react-international-phone-country-selector-background-color":
                 "#F2F2F2",
@@ -124,15 +180,7 @@ const Page = ({
           id="_form_1_submit"
           className="inline-flex justify-center items-center text-[20rem] sm:text-[22rem] font-bold leading-[24rem] sm:leading-[31rem] text-white bg-[url('/sales/button_bg.png')] bg-cover bg-no-repeat mt-[26rem] sm:mt-[34rem] w-[354rem] sm:w-[454rem] h-[70rem] sm:h-[85rem] rounded-[48rem]"
           type="submit"
-          onClick={() => {
-            formSubmitTrack();
-          }}
-          disabled={
-            nameValue.length < 3 ||
-            !emailValue.includes(`@`) ||
-            phoneValue.length > 11 ||
-            phoneValue.length < 11
-          }
+          disabled={isSubmitDisabled}
         >
           ACCESEAZĂ ACUM
           <br />

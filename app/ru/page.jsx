@@ -29,6 +29,12 @@ const Page = () => {
   const handleTogglePopup = () => {
     setIsOpen(!isOpen);
     setIsFormSubmittedEventId(formSubmittedEventId);
+
+    if (isOpen) {
+      setNameValue("");
+      setEmailValue("");
+      setPhoneValue("");
+    }
   };
  
    const businessCollection = [
@@ -939,7 +945,6 @@ const Page = () => {
           window.fbq(
             "track",
             "Lead",
-            {},
             {
               eventID: isFormSubmittedEventId,
               fbc: isFBC,
@@ -982,16 +987,6 @@ const Page = () => {
         if (window.innerWidth > 600) document.body.style.paddingRight = "0";
       }
     }, [isOpen, isItemToggle]);
-
-      React.useEffect(() => {
-        setTimeout(() => {
-          if (!isOpen) {
-            setNameValue("");
-            setEmailValue("");
-            setPhoneValue("");
-          }
-        }, [3000]);
-      }, [nameValue, emailValue, phoneValue, isOpen]);
 
        React.useEffect(() => {
          const fbp = Cookies.get("_fbp");

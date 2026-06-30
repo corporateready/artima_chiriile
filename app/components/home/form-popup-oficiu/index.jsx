@@ -32,15 +32,6 @@ if (lineElement) {
 }
   },[isVisibleElement])
 
-  React.useEffect(() => {
-    if (isSend) {
-      setNameValue("");
-      setEmailValue("");
-      setPhoneValue("");
-      handleTogglePopup();
-    }
-  }, [isSend]);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -152,6 +143,7 @@ if (lineElement) {
           setEmailValue={setEmailValue}
           setPhoneValue={setPhoneValue}
           userLocation={userLocation}
+          handleTogglePopup={handleTogglePopup}
         />
       </div>
     </motion.div>

@@ -44,7 +44,7 @@ const Page = () => {
       const res = await fetch("https://ipinfo.io/json");
       const locationData = await res.json();
       if (locationData) {
-        setUserLocation(locationData.city)
+        setUserLocation(locationData.city);
         setIP(locationData.ip);
       }
     };
@@ -55,6 +55,12 @@ const Page = () => {
   const handleTogglePopup = () => {
     setIsOpen(!isOpen);
     setIsFormSubmittedEventId(formSubmittedEventId);
+
+    if (isOpen) {
+      setNameValue("");
+      setEmailValue("");
+      setPhoneValue("");
+    }
   };
 
   React.useEffect(() => {
@@ -69,24 +75,19 @@ const Page = () => {
 
   const formSubmitTrack = () => {
 
-     if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
-       window.fbq(
-         "track",
-         "Lead",
-        //  {},
-         {
-           eventID: isFormSubmittedEventId,
-           fbc: isFBC,
-           em: emailValue,
-           ph: phoneValue,
-           fn: nameValue,
-           ct: userLocation,
-           ip: isIP,
-           pageview_event_id: isPageViewEventId,
-           external_id: isExternalId,
-         }
-       );
-     }
+    if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
+      window.fbq("track", "Lead", {
+        eventID: isFormSubmittedEventId,
+        fbc: isFBC,
+        em: emailValue,
+        ph: phoneValue,
+        fn: nameValue,
+        ct: userLocation,
+        ip: isIP,
+        pageview_event_id: isPageViewEventId,
+        external_id: isExternalId,
+      });
+    }
 
     if (typeof window !== "undefined" && window.posthog) {
       window.posthog.capture("form_submitted", {
@@ -102,16 +103,6 @@ const Page = () => {
     }
 
   };
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      if (!isOpen) {
-        setNameValue("");
-        setEmailValue("");
-        setPhoneValue("");
-      }
-    }, [3000]);
-  }, [nameValue, emailValue, phoneValue, isOpen]);
 
   const [isItemToggle, setIsItemToggle] = React.useState(false);
   const [isSlideItem, setIsSlideItem] = React.useState(0);
@@ -707,7 +698,7 @@ const Page = () => {
       window.fbq("init", PIXEL_ID);
     }
     const fbc = Cookies.get("_fbc");
-    setIsFBC(fbc)
+    setIsFBC(fbc);
   }, []);
 
   return (
@@ -717,13 +708,18 @@ const Page = () => {
         <div className={styles.sale_head__content}>
           <div className={styles.sale_header__wrapper}>
             <p className={`${styles.head_content__title} safariH2`}>
-              <span>Business centru </span>{""}
-              <br className="hidden sm:inline-block" />cu oficii și spații {""}
-              <br className="inline-block sm:hidden"/>comerciale premium{" "}
+              <span>Business centru </span>
+              {""}
+              <br className="hidden sm:inline-block" />
+              cu oficii și spații {""}
+              <br className="inline-block sm:hidden" />
+              comerciale premium{" "}
             </p>
             <p className={styles.head_content__subtitle}>
-              Amplasare strategică la prima linie, str. Calea Ieșilor — o destinație
-              <br className="hidden sm:inline-block" /> business emblematică{" "}
+              Amplasare strategică la prima linie, str. Calea Ieșilor — o
+              destinație
+              <br className="hidden sm:inline-block" /> business
+              emblematică{" "}
             </p>
             <p className={styles.head_content__subtitle_mobile}>
               Amplasare strategică la prima linie, str. Calea Ieșilor{""}

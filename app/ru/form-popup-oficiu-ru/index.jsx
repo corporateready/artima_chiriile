@@ -31,15 +31,6 @@ export default function FormPopupRu({
     }
   }, [isVisibleElement]);
 
-  React.useEffect(() => {
-    if (isSend) {
-      setNameValue("");
-      setEmailValue("");
-      setPhoneValue("");
-      handleTogglePopup();
-    }
-  }, [isSend]);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -152,6 +143,7 @@ export default function FormPopupRu({
           setEmailValue={setEmailValue}
           phoneValue={phoneValue}
           setPhoneValue={setPhoneValue}
+          handleTogglePopup={handleTogglePopup}    
         />
       </div>
     </motion.div>

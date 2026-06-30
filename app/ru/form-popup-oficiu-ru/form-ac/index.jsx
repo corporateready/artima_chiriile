@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import "./form.scss";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
@@ -22,23 +23,73 @@ export default function Page({
   setNameValue,
   setEmailValue,
   setPhoneValue,
+  handleTogglePopup,
 }) {
-  const [selectedCountry, setSelectedCountry] = React.useState({
-    iso2: "md",
-    dialCode: "373",
-    format: CUSTOM_COUNTRY_FORMATS.md,
-  });
+  const router = useRouter();
+    const [selectedCountry, setSelectedCountry] = React.useState({
+      iso2: "md",
+      dialCode: "373",
+      format: CUSTOM_COUNTRY_FORMATS.md,
+    });
+  
+    const currentMask = getCountryMask(selectedCountry);
+    const currentPlaceholder = maskToPlaceholder(currentMask);
+  
+    const handleDesktopEnterNext = React.useCallback(
+      (event, nextElementId) => {
+        if (isMobile || event.key !== "Enter") return;
+  
+        event.preventDefault();
+  
+        const nextElement = document.getElementById(nextElementId);
+        nextElement?.focus();
+      },
+      [isMobile],
+    );
+  
+    const isSubmitDisabled =
+      nameValue.length < 3 || !emailValue.includes("@") || phoneValue.length < 12;
+  
+      const clearForm = () => {
+        setNameValue("");
+        setEmailValue("");
+        setPhoneValue("");
+      };
+  
+    const handleSubmit = React.useCallback(
+    (event) => {
+      event.preventDefault();
+  
+      if (isSubmitDisabled) {
+        setIsOpen(true);
+        return;
+      }
+  
+      formSubmitTrack();
+  
+      setTimeout(() => {
+        clearForm();
+      }, 1000);
+      
+  
+      setTimeout(() => {
+        clearForm();
+        handleTogglePopup();
+  
+      router.replace("/");
+      }, 2000);
+    },
+    [isSubmitDisabled, formSubmitTrack, router],
+  );
 
-  const currentMask = getCountryMask(selectedCountry);
-  const currentPlaceholder = maskToPlaceholder(currentMask);
-  console.log("phoneValue", phoneValue);
   return (
     <form
       method="POST"
-      action="https://eu.customerioforms.com/forms/submit_action?site_id=4367d44fa648e87be6fe&form_id=03855c6653bc4ec&success_url=https://artima.md/ru"
+      // action="https://eu.customerioforms.com/forms/submit_action?site_id=4367d44fa648e87be6fe&form_id=03855c6653bc4ec&success_url=https://artima.md/ru"
       id="_form_1_"
       noValidate
       data-styles-version="4"
+      onSubmit={handleSubmit}
     >
       <div className="flex flex-col pt-[40rem] pb-[32rem] sm:py-[52rem] w-[366rem] sm:w-[454rem] mx-auto">
         <input
@@ -49,6 +100,7 @@ export default function Page({
           value={nameValue}
           onChange={(e) => setNameValue(e.target.value)}
           placeholder={"Имя, Фамилия"}
+          onKeyDown={(e) => handleDesktopEnterNext(e, "email")}
           required
         />
         <input
@@ -58,6 +110,7 @@ export default function Page({
           name="email"
           value={emailValue}
           onChange={(e) => setEmailValue(e.target.value)}
+          onKeyDown={(e) => handleDesktopEnterNext(e, "phone")}
           required
           placeholder="E-mail"
         />
@@ -71,6 +124,7 @@ export default function Page({
               autoComplete: "tel-national",
               inputMode: "numeric",
               pattern: "[0-9]*",
+              onKeyDown: (e) => handleDesktopEnterNext(e, "_form_1_submit"),
             }}
             inputStyle={{
               borderRadius: "30px",
@@ -124,13 +178,7 @@ export default function Page({
           id=""
           className="flex justify-center items-center w-[366rem] sm:w-[454rem] h-[70rem] sm:h-[84rem] mx-auto mt-[26rem] sm:mt-[34rem] text-[20rem] sm:text-[22rem] text-white font-bold uppercase leading-[28rem] sm:leading-[31rem] hover:bg-[#ffc231] bg-[url('/sales/button_bg.png')] bg-cover bg-no-repeat rounded-full"
           type="submit"
-          disabled={
-            nameValue.length < 3 ||
-            !emailValue.includes(`@`) ||
-            phoneValue.length > 11 ||
-            phoneValue.length < 11
-          }
-          onClick={() => formSubmitTrack()}
+          disabled={isSubmitDisabled}
         >
           Получить
           <br />
