@@ -15,6 +15,7 @@ import Form from "./components/home/form-popup-oficiu";
 import { motion } from "framer-motion";
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
+import { analytics } from "@/lib/analytics";
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_PIXEL_ID;
 
@@ -89,18 +90,13 @@ const Page = () => {
       });
     }
 
-    if (typeof window !== "undefined" && window.posthog) {
-      window.posthog.capture("form_submitted", {
-        fbc: isFBC,
-        fbp: isFBP,
-        email: emailValue,
-        phone: phoneValue,
-        name: nameValue,
-        pageview_event_id: isPageViewEventId,
-        external_id: isExternalId,
-        form_submitted_event_id: isFormSubmittedEventId,
-      });
-    }
+    analytics.capture("form_submitted", {
+      fbc: isFBC,
+      fbp: isFBP,
+      pageview_event_id: isPageViewEventId,
+      external_id: isExternalId,
+      form_submitted_event_id: isFormSubmittedEventId,
+    });
 
   };
 

@@ -14,6 +14,7 @@ import Header from "./sections/header-ru"
 import OurClients from "./sections/our-clients"
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
+import { analytics } from "@/lib/analytics";
 
 const PIXEL_ID = "1297393634749549";
 
@@ -959,18 +960,13 @@ const Page = () => {
           );
         }
 
-        if (typeof window !== "undefined" && window.posthog) {
-          window.posthog.capture("form_submitted", {
-            fbc: isFBC,
-            fbp: isFBP,
-            email: emailValue,
-            phone: phoneValue,
-            name: nameValue,
-            pageview_event_id: isPageViewEventId,
-            external_id: isExternalId,
-            form_submitted_event_id: isFormSubmittedEventId,
-          });
-        }
+        analytics.capture("form_submitted", {
+          fbc: isFBC,
+          fbp: isFBP,
+          pageview_event_id: isPageViewEventId,
+          external_id: isExternalId,
+          form_submitted_event_id: isFormSubmittedEventId,
+        });
 
      };
 
