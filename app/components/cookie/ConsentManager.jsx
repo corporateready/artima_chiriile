@@ -102,7 +102,7 @@ export default function ConsentManager() {
           className="fixed bottom-1/2 left-1/2 z-[9999] h-dvh w-dvw -translate-x-1/2 translate-y-1/2 border-t border-white/[0.07] bg-[rgba(12,12,12,0.1)]"
         >
           <div
-            className="absolute left-1/2 top-1/2 mx-auto flex h-[640rem] w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-[20rem] bg-white pt-[60rem] pb-[30rem] sm:pb-[30rem] sm:top-1/2 sm:h-[260rem] sm:w-[800rem] sm:gap-0 rounded-none sm:rounded-[10rem] border-none"
+            className="absolute left-1/2 top-1/2 mx-auto flex h-[640rem] w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-[20rem] bg-white pt-[60rem] pb-[30rem] sm:pb-[30rem] sm:top-1/2 sm:h-[260rem] sm:w-[740rem] sm:gap-0 rounded-none sm:rounded-[10rem] border-none"
           >
             <p className="text-black text-[15rem] m-0 flex-[1_1_280rem] font-[Inter,sans-serif] font-400 px-100 border-t border-black/[0.1] pt-[10rem] px-[20rem]">
               <b>{copy.bannerTitle}</b>
@@ -135,7 +135,7 @@ export default function ConsentManager() {
         >
           <div
             className="
-              w-full sm:w-[400rem] rounded-[10rem] border-[1rem] border-none bg-white p-[32rem] font-['Inter',sans-serif] text-black/65"
+              w-full sm:w-[350rem] rounded-[10rem] border-[1rem] border-none bg-white p-[32rem] font-['Inter',sans-serif] text-black/65"
           >
             <div
               style={{
@@ -339,7 +339,7 @@ function BannerButton({ onClick, variant, children }) {
 function ModalButton({ onClick, variant, children }) {
   const base = {
     cursor: "pointer",
-    fontSize: "16rem",
+    fontSize: "15rem",
     fontFamily: "Inter, sans-serif",
     fontWeight: 700,
     padding: "10rem",
