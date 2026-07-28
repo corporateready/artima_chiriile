@@ -9,6 +9,7 @@ export function getConsentLocale(pathname = "") {
 export const CONSENT_TRANSLATIONS = {
   ro: {
     regionLabel: "Consimțământ pentru cookie-uri",
+    languageSelectorLabel: "Limba notificării despre cookie-uri",
     bannerTitle: "Acest site utilizează cookie-uri",
     bannerDescription:
       "Utilizăm cookie-uri pentru a personaliza conținutul și reclamele, pentru a oferi funcționalități pentru rețelele sociale și pentru a analiza traficul. De asemenea, partajăm informații despre utilizarea site-ului cu partenerii noștri de social media, publicitate și analiză.",
@@ -31,6 +32,7 @@ export const CONSENT_TRANSLATIONS = {
   },
   ru: {
     regionLabel: "Согласие на использование cookie",
+    languageSelectorLabel: "Язык уведомления о cookie",
     bannerTitle: "Этот сайт использует файлы cookie",
     bannerDescription:
       "Мы используем файлы cookie для персонализации контента и рекламы, предоставления функций социальных сетей и анализа трафика. Мы также делимся информацией об использовании сайта с нашими партнерами по социальным сетям, рекламе и аналитике.",

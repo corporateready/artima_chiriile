@@ -19,7 +19,10 @@ function createBrowser() {
     optIn: 0,
     optOut: 0,
     reset: 0,
+    reloadFeatureFlags: 0,
     setConfig: [],
+    featureFlagsReset: 0,
+    featureFlagsReloadingPaused: [],
     startRecording: 0,
     stopRecording: 0,
     persistenceClear: 0,
@@ -46,6 +49,7 @@ function createBrowser() {
           config: { session_recording: { recordCrossOriginIframes: false } },
           set_config(config) {
             posthogCalls.setConfig.push(config);
+            Object.assign(this.config, config);
           },
           opt_in_capturing(options) {
             posthogCalls.optIn += 1;
@@ -62,6 +66,17 @@ function createBrowser() {
           },
           reset() {
             posthogCalls.reset += 1;
+          },
+          reloadFeatureFlags() {
+            posthogCalls.reloadFeatureFlags += 1;
+          },
+          featureFlags: {
+            reset() {
+              posthogCalls.featureFlagsReset += 1;
+            },
+            setReloadingPaused(paused) {
+              posthogCalls.featureFlagsReloadingPaused.push(paused);
+            },
           },
           persistence: {
             clear() {
@@ -149,8 +164,10 @@ test("accept loads GTM once and enables consent-aware capture", async () => {
   });
   assert.deepEqual(browser.posthogCalls.setConfig, [
     {
+      advanced_disable_flags: false,
       capture_pageview: "history_change",
       mask_personal_data_properties: true,
+      opt_out_persistence_by_default: true,
       persistence: "localStorage+cookie",
       session_recording: {
         maskAllInputs: true,
@@ -183,8 +200,18 @@ test("revocation stops replay, opts out, clears PostHog state, and blocks captur
   await applyAnalyticsConsent(false);
 
   assert.equal(browser.posthogCalls.stopRecording, 1);
-  assert.equal(browser.posthogCalls.optOut, 2);
-  assert.equal(browser.posthogCalls.reset, 1);
+  assert.equal(browser.posthogCalls.optOut, 1);
+  assert.equal(browser.posthogCalls.reset, 0);
+  assert.equal(browser.posthogCalls.featureFlagsReset, 1);
+  assert.deepEqual(browser.posthogCalls.featureFlagsReloadingPaused, [
+    false,
+    true,
+  ]);
+  assert.deepEqual(browser.posthogCalls.setConfig.at(-1), {
+    advanced_disable_flags: true,
+    capture_pageview: false,
+    opt_out_persistence_by_default: true,
+  });
   assert.equal(browser.posthogCalls.persistenceClear, 1);
   assert.equal(browser.posthogCalls.sessionPersistenceClear, 1);
   assert.equal(window.posthog.__request_queue.length, 0);
@@ -204,4 +231,7 @@ test("accepting again resumes the existing SDK without loading GTM twice", async
   assert.equal(browser.appendedScripts.length, 1);
   assert.equal(browser.posthogCalls.optIn, 2);
   assert.equal(browser.posthogCalls.startRecording, 2);
+  assert.equal(browser.posthogCalls.reset, 1);
+  assert.equal(browser.posthogCalls.reloadFeatureFlags, 1);
+  assert.equal(browser.posthogCalls.featureFlagsReloadingPaused.at(-1), false);
 });
