@@ -197,7 +197,7 @@ export default function ConsentManager() {
 
       {modalOpen && (
         <div
-          className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 p-[16rem] backdrop-blur-[2px]"
+          className="fixed inset-0 z-[10000] flex items-center justify-center p-[16rem]"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) closeSettings();
           }}
