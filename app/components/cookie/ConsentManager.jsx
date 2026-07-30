@@ -138,7 +138,7 @@ export default function ConsentManager() {
             className="absolute left-1/2 top-1/2 mx-auto flex h-auto w-[380rem] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center bg-white sm:top-1/2 sm:w-[740rem] sm:gap-0 rounded-[10rem] border-none"
           >
             <div className="py-[6rem] sm:py-[1rem] w-full h-auto flex items-center justify-between pr-[20rem] sm:pr-[30rem] pl-[10rem] sm:sm:pl-[20rem]">
-              <Image src={Logo} alt="artima dark logo" width={50} height={50} />
+              <Image src={Logo} alt="artima dark logo" width={100} height={80} />
               <div
                 role="group"
                 aria-label={copy.languageSelectorLabel}
