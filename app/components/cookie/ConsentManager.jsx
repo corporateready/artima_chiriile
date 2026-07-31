@@ -132,7 +132,7 @@ export default function ConsentManager() {
           role="region"
           aria-label={copy.regionLabel}
           lang={locale}
-          className="fixed bottom-1/2 left-1/2 z-[9999] h-dvh w-dvw -translate-x-1/2 translate-y-1/2 border-t border-white/[0.07] bg-transparent"
+          className="fixed bottom-1/2 left-1/2 z-[9999] h-dvh w-dvw -translate-x-1/2 translate-y-1/2 border-t border-white/[0.07] bg-transparent font-['SF_Pro_Display',-apple-system,BlinkMacSystemFont,'Segoe_UI',sans-serif]"
         >
           <div
             className="absolute left-1/2 top-1/2 mx-auto flex h-auto w-[380rem] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center bg-white sm:top-1/2 sm:w-[740rem] sm:gap-0 rounded-[10rem] border-none"
