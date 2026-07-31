@@ -144,12 +144,12 @@ export default function ConsentManager() {
                 aria-label={copy.languageSelectorLabel}
                 className="flex gap-[20rem] relative z-0"
               >
-                <span className="inline-flex w-[3rem] h-[3rem] rounded-full bg-slate-400 absolute top-1/2 left-1/2 z-1 -translate-x-1/2 -translate-y-1/2"></span>
+                <span className="inline-flex w-[3rem] h-[3rem] rounded-full bg-slate-400 absolute top-1/2 left-1/2 z-1 -translate-x-1/2 -translate-y-1/2 transition-all duration-150"></span>
                 <button
                   type="button"
                   lang="ro"
                   aria-pressed={locale === "ro"}
-                  className={`text-[16rem] font-medium ${locale === "ro" ? "border-b border-b-orange-400" : "border-none"}`}
+                  className={`text-[14rem] font-medium ${locale === "ro" ? "border-b border-b-orange-400" : "border-none text-slate-400"}`}
                   onClick={() => setLocale("ro")}
                 >
                   RO
@@ -158,7 +158,7 @@ export default function ConsentManager() {
                   type="button"
                   lang="ru"
                   aria-pressed={locale === "ru"}
-                  className={`text-[16rem] font-medium ${locale === "ru" ? "border-b border-b-orange-400" : "border-none"}`}
+                  className={`text-[14rem] font-medium ${locale === "ru" ? "border-b border-b-orange-400" : "border-none text-slate-400"}`}
                   onClick={() => setLocale("ru")}
                 >
                   RU
@@ -301,7 +301,7 @@ function ConsentRow({
           style={{
             margin: "5rem 0 0",
             fontSize: "12rem",
-            color: "black",
+            color: "#646962",
             lineHeight: "1.5",
           }}
         >
@@ -312,7 +312,7 @@ function ConsentRow({
         <span
           style={{
             fontSize: "11rem",
-            color: "black",
+            color: "#646962",
             whiteSpace: "nowrap",
             marginTop: "3rem",
             flexShrink: 0,
