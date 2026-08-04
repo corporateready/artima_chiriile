@@ -3,44 +3,12 @@ import React, { Suspense } from "react";
 import styles from "./header.module.scss";
 import Link from "next/link";
 import Logo from "../logo";
-import Script from "next/script";
+import TrackedPhoneLink from "../../components/tracked-phone-link";
 
 const Index = () => {
 
   return (
     <header className={styles.booking_header}>
-      {/* <Script
-        async
-        id="roistat-script"
-        dangerouslySetInnerHTML={{
-          __html: `
-              (function (w, d, s, h, id) {
-              w.roistatProjectId = id;
-              w.roistatHost = h;
-              var p = d.location.protocol == "https:" ? "https://" : "http://";
-              var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie)
-                ? "/dist/module.js"
-                : "/api/site/1.0/" +
-                  id +
-                  "/init?referrer=" +
-                  encodeURIComponent(d.location.href);
-              var js = d.createElement(s);
-              js.charset = "UTF-8";
-              js.async = 1;
-              js.src = p + h + u;
-              var js2 = d.getElementsByTagName(s)[0];
-              js2.parentNode.insertBefore(js, js2);
-              console.log("Roistat is work!")
-            })(
-              window,
-              document,
-              "script",
-              "cloud.roistat.com",
-              "e39442a8581e616d741b8f0786da960e"
-            )
-          `,
-        }}
-      /> */}
       <div className={styles.booking_header__inner}>
         <Logo />
 
@@ -60,12 +28,9 @@ const Index = () => {
                 fill="#333132"
               />
             </svg>
-            <a
-              href={"tel:+37376037107"}
+            <TrackedPhoneLink
               className={styles.header_navigate__phone}
-            >
-              {/* +373 76 03 71 07 */}
-            </a>
+            />
           </div>
         </div>
       </div>

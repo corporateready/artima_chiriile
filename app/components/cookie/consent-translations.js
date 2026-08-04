@@ -21,11 +21,11 @@ export const CONSENT_TRANSLATIONS = {
     close: "Închide",
     essentials: "Esențiale",
     essentialsDescription:
-      "Necesare pentru funcționarea site-ului: urmărirea apelurilor și înlocuirea numărului de telefon.",
+      "Necesare pentru funcționarea de bază a site-ului. Numărul de contact poate fi apelat fără cookie-uri.",
     alwaysActive: "Mereu active",
     analytics: "Analiză și performanță",
     analyticsDescription:
-      "Ne ajută să înțelegem cum este utilizat site-ul (Google Analytics, PostHog).",
+      "Ne ajută să înțelegem cum este utilizat site-ul și să atribuim apelurile prin înlocuirea dinamică a numărului (Google Analytics, PostHog, Roistat).",
     marketing: "Marketing și publicitate",
     marketingDescription:
       "Permit afișarea și măsurarea reclamelor relevante (Meta Pixel, LinkedIn Ads, Google Ads).",
@@ -44,11 +44,11 @@ export const CONSENT_TRANSLATIONS = {
     close: "Закрыть",
     essentials: "Обязательные",
     essentialsDescription:
-      "Необходимы для работы сайта: отслеживание звонков и подмена номера телефона.",
+      "Необходимы для базовой работы сайта. Позвонить по контактному номеру можно без файлов cookie.",
     alwaysActive: "Всегда активны",
     analytics: "Аналитика и производительность",
     analyticsDescription:
-      "Помогают нам понять, как используется сайт (Google Analytics, PostHog).",
+      "Помогают понять, как используется сайт, и связать звонки с источником через динамическую подмену номера (Google Analytics, PostHog, Roistat).",
     marketing: "Маркетинг и реклама",
     marketingDescription:
       "Позволяют показывать и оценивать эффективную рекламу (Meta Pixel, LinkedIn Ads, Google Ads).",

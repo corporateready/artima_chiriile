@@ -3,6 +3,7 @@ import LogoHeaderSVG from "../assets/logo/page";
 import styles from "./header.module.scss";
 import TelIcon from "../assets/header-tel-mobile/page";
 import Link from "next/link";
+import TrackedPhoneLink from "../tracked-phone-link";
 
 const Page = () => {
 
@@ -21,19 +22,15 @@ const Page = () => {
           >
             RO
           </Link>
-          <a
-            href="tel:"
+          <TrackedPhoneLink
             className={styles.header__phone_btn__mob}
-          ></a>
+            labelMode="hidden"
+          />
           <TelIcon />
-          <Link
-            href="tel:"
-            // href="tel:+373776037107"
+          <TrackedPhoneLink
             className={styles.header__phone_btn}
             id="header-phone-btn"
-          >
-            {/* +373 760 119 96 */}
-          </Link>
+          />
         </div>
       </div>
     </div>

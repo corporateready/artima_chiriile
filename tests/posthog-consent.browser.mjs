@@ -194,3 +194,72 @@ test("revoking analytics sends no /flags/ request and disables PostHog persisten
 
   await context.close();
 });
+
+test("phone stays callable without cookies and Roistat replacement follows analytics consent", async () => {
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  let gtmRequests = 0;
+
+  page.on("request", (request) => {
+    if (request.url().startsWith("https://www.googletagmanager.com/gtm.js")) {
+      gtmRequests += 1;
+    }
+  });
+
+  await page.route("https://www.googletagmanager.com/gtm.js**", async (route) => {
+    await route.fulfill({
+      body: `
+        window.setTimeout(() => {
+          document.querySelectorAll('a[data-tracked-phone="true"]').forEach((link) => {
+            link.href = "tel:+37322123456";
+            link.textContent = "+373 22 123 456";
+          });
+        }, 50);
+      `,
+      contentType: "application/javascript",
+      status: 200,
+    });
+  });
+
+  await page.goto(appUrl, { waitUntil: "domcontentloaded" });
+  const phone = page.locator('a[data-tracked-phone="true"]').first();
+
+  assert.equal(await phone.getAttribute("href"), "tel:+37376040824");
+  assert.equal((await phone.textContent()).trim(), "+373 76 040 824");
+  assert.equal(gtmRequests, 0, "GTM and Roistat must not load before consent");
+
+  await page.getByRole("button", { name: "Acceptă toate" }).click();
+  await page.waitForFunction(
+    () =>
+      document.querySelector('a[data-tracked-phone="true"]')?.getAttribute("href") ===
+      "tel:+37322123456",
+  );
+  assert.equal(gtmRequests, 1);
+  assert.equal((await phone.textContent()).trim(), "+373 22 123 456");
+
+  await page.getByRole("button", { name: "Preferințe cookie-uri" }).click();
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: "Respinge" })
+    .click();
+  await page.waitForFunction(
+    () =>
+      document.querySelector('a[data-tracked-phone="true"]')?.getAttribute("href") ===
+      "tel:+37376040824",
+  );
+  assert.equal((await phone.textContent()).trim(), "+373 76 040 824");
+
+  await page.evaluate(() => {
+    const link = document.querySelector('a[data-tracked-phone="true"]');
+    link.href = "tel:+37322999999";
+    link.textContent = "+373 22 999 999";
+  });
+  await page.waitForFunction(
+    () =>
+      document.querySelector('a[data-tracked-phone="true"]')?.getAttribute("href") ===
+      "tel:+37376040824",
+  );
+  assert.equal((await phone.textContent()).trim(), "+373 76 040 824");
+
+  await context.close();
+});

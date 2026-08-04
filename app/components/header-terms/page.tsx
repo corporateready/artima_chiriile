@@ -2,6 +2,7 @@ import React from "react";
 import LogoHeaderSVG from "../assets/logo-dark/page";
 import styles from "./header.module.scss";
 import TelIcon from "../assets/header-terms-tel-mobile/page"
+import TrackedPhoneLink from "../tracked-phone-link";
 
 type Props = {};
 
@@ -13,12 +14,13 @@ const Page = (props: Props) => {
       <div className={styles.container}>
       <div className={styles.header__wrapper}>
         <LogoHeaderSVG />
-        <a href="tel:" className={styles.header__phone_btn__mob}>
+        <TrackedPhoneLink
+          className={styles.header__phone_btn__mob}
+          labelMode="children"
+        >
           <TelIcon/>
-        </a>
-        <a href="tel:" className={styles.header__phone_btn}>
-          {/* +373 760 119 96 */}
-        </a>
+        </TrackedPhoneLink>
+        <TrackedPhoneLink className={styles.header__phone_btn} />
       </div>
       </div>
     </div>
