@@ -16,6 +16,10 @@ import { motion } from "framer-motion";
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
 import { analytics } from "@/lib/analytics";
+import {
+  captureFirstTouch,
+  getAttributionProperties,
+} from "@/lib/attribution";
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_PIXEL_ID;
 
@@ -74,6 +78,14 @@ const Page = () => {
     }
   }, []);
 
+  // Record the campaign that brought this visitor in, before anything can
+  // strip the query string — the forms call router.replace("/") after a
+  // submit, and PostHog's own $initial_utm_* are unusable here (consent-gated
+  // load + reset on restore). See lib/attribution.js.
+  React.useEffect(() => {
+    captureFirstTouch();
+  }, []);
+
   const formSubmitTrack = () => {
 
     if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
@@ -96,6 +108,9 @@ const Page = () => {
       pageview_event_id: isPageViewEventId,
       external_id: isExternalId,
       form_submitted_event_id: isFormSubmittedEventId,
+      // Campaign attribution — without these the submission cannot be tied
+      // back to the ad that produced it.
+      ...getAttributionProperties(),
     });
 
   };
