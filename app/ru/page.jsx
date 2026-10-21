@@ -15,6 +15,7 @@ import OurClients from "./sections/our-clients"
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
 import { analytics } from "@/lib/analytics";
+import { whenMarketingConsent } from "@/lib/consent";
 
 const PIXEL_ID = "1297393634749549";
 
@@ -924,7 +925,8 @@ const Page = () => {
          }
        };
 
-       getClientLocation();
+       // ipinfo.io sees the visitor's IP, so only look it up after marketing consent.
+       return whenMarketingConsent(getClientLocation);
      }, []);
 
      React.useEffect(() => {
@@ -952,8 +954,8 @@ const Page = () => {
               em: emailValue,
               ph: phoneValue,
               fn: nameValue,
-              ct: userLocation,
-              ip: isIP,
+              ...(userLocation && { ct: userLocation }),
+              ...(isIP && { ip: isIP }),
               pageview_event_id: isPageViewEventId,
               external_id: isExternalId,
             }

@@ -17,6 +17,7 @@ import useRudderStackAnalytics from "../useRudderAnalytics";
 import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
 import { analytics as postHogAnalytics } from "@/lib/analytics";
+import { whenMarketingConsent } from "@/lib/consent";
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_PIXEL_ID;
 
@@ -54,7 +55,8 @@ const Page = () => {
       }
     };
 
-    getClientLocation();
+    // ipinfo.io sees the visitor's IP, so only look it up after marketing consent.
+    return whenMarketingConsent(getClientLocation);
   }, []);
 
   const handleTogglePopup = () => {
@@ -119,8 +121,8 @@ const Page = () => {
            em: emailValue,
            ph: phoneValue,
            fn: nameValue,
-           ct: userLocation,
-           ip: isIP,
+           ...(userLocation && { ct: userLocation }),
+           ...(isIP && { ip: isIP }),
            pageview_event_id: isPageViewEventId,
            external_id: isExternalId,
          }
