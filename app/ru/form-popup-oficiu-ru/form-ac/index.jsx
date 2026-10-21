@@ -47,6 +47,10 @@ export default function Page({
       [isMobile],
     );
   
+    const [isSending, setIsSending] = React.useState(false);
+    const [sendError, setSendError] = React.useState(false);
+    const honeypotRef = React.useRef(null);
+
     const isSubmitDisabled =
       nameValue.length < 3 || !emailValue.includes("@") || phoneValue.length < 12;
   
@@ -57,7 +61,7 @@ export default function Page({
       };
   
     const handleSubmit = React.useCallback(
-    (event) => {
+    async (event) => {
       event.preventDefault();
   
       if (isSubmitDisabled) {
@@ -65,7 +69,18 @@ export default function Page({
         return;
       }
   
-      formSubmitTrack();
+      if (isSending) return;
+      setIsSending(true);
+      setSendError(false);
+
+      const delivered = await formSubmitTrack({
+        honeypot: honeypotRef.current?.value,
+      });
+      if (!delivered) {
+        setIsSending(false);
+        setSendError(true);
+        return;
+      }
   
       setTimeout(() => {
         clearForm();
@@ -79,7 +94,7 @@ export default function Page({
       router.replace("/");
       }, 2000);
     },
-    [isSubmitDisabled, formSubmitTrack, router],
+    [isSubmitDisabled, isSending, formSubmitTrack, router],
   );
 
   return (
@@ -174,16 +189,30 @@ export default function Page({
 
         <input type="hidden" name="language" value={"ru"} />
 
+        <input
+          type="text"
+          name="contact_me_by_fax_only"
+          ref={honeypotRef}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-10000px", width: 1, height: 1, opacity: 0 }}
+        />
         <button
           id=""
           className="flex justify-center items-center w-[366rem] sm:w-[454rem] h-[70rem] sm:h-[84rem] mx-auto mt-[26rem] sm:mt-[34rem] text-[20rem] sm:text-[22rem] text-white font-bold uppercase leading-[28rem] sm:leading-[31rem] hover:bg-[#ffc231] bg-[url('/sales/button_bg.png')] bg-cover bg-no-repeat rounded-full"
           type="submit"
-          disabled={isSubmitDisabled}
+          disabled={isSubmitDisabled || isSending}
         >
           Получить
           <br />
           PDF-презентацию
         </button>
+        {sendError && (
+          <p role="alert" className="mt-[16rem] text-center text-[14rem] sm:text-[16rem] text-[#c0392b]">
+            Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам.
+          </p>
+        )}
       </div>
     </form>
   );

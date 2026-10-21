@@ -16,6 +16,7 @@ import Cookies from "js-cookie";
 import { v4 as uuidv4 } from "uuid";
 import { analytics } from "@/lib/analytics";
 import { whenMarketingConsent } from "@/lib/consent";
+import { submitLead } from "@/lib/submit-lead";
 
 const PIXEL_ID = "1297393634749549";
 
@@ -939,37 +940,54 @@ const Page = () => {
        }
      }, []);
 
-     const formSubmitTrack = () => {
+     const submissionIdRef = React.useRef(null);
 
-        if (
-          typeof window !== "undefined" &&
-          typeof window.fbq !== "undefined"
-        ) {
-          window.fbq(
-            "track",
-            "Lead",
-            {
-              eventID: isFormSubmittedEventId,
-              fbc: isFBC,
-              em: emailValue,
-              ph: phoneValue,
-              fn: nameValue,
-              ...(userLocation && { ct: userLocation }),
-              ...(isIP && { ip: isIP }),
-              pageview_event_id: isPageViewEventId,
-              external_id: isExternalId,
-            }
-          );
-        }
+     // Sends the lead to ENSO first. Resolves to true once ENSO has it; the form
+     // shows an error otherwise. Meta and PostHog fire only after that.
+     const formSubmitTrack = async ({ honeypot } = {}) => {
+       // One id per lead. A retry after a failed send reuses it, so ENSO never
+       // records the same lead twice. The same id goes to Meta and PostHog.
+       if (!submissionIdRef.current) submissionIdRef.current = uuidv4();
+       const submissionId = submissionIdRef.current;
 
-        analytics.capture("form_submitted", {
-          fbc: isFBC,
-          fbp: isFBP,
-          pageview_event_id: isPageViewEventId,
-          external_id: isExternalId,
-          form_submitted_event_id: isFormSubmittedEventId,
-        });
+       const delivered = await submitLead({
+         submissionId,
+         name: nameValue,
+         email: emailValue,
+         phone: phoneValue,
+         placement: "popup",
+         honeypot,
+       });
+       if (!delivered) return false;
 
+       if (typeof window !== "undefined" && typeof window.fbq !== "undefined") {
+         window.fbq("track", "Lead", {
+           eventID: submissionId,
+           fbc: isFBC,
+           em: emailValue,
+           ph: phoneValue,
+           fn: nameValue,
+           ...(userLocation && { ct: userLocation }),
+           ...(isIP && { ip: isIP }),
+           pageview_event_id: isPageViewEventId,
+           external_id: isExternalId,
+         });
+       }
+
+       // Analytics only: the lead itself already reached ENSO above.
+       analytics.capture("form_submitted", {
+         fbc: isFBC,
+         fbp: isFBP,
+         placement: "popup",
+         pageview_event_id: isPageViewEventId,
+         external_id: isExternalId,
+         submission_id: submissionId,
+         form_submitted_event_id: submissionId,
+       });
+
+       // The popup can be opened again for another lead on the same page.
+       submissionIdRef.current = null;
+       return true;
      };
 
     React.useEffect(() => {
