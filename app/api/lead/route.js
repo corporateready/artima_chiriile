@@ -83,6 +83,33 @@ function visitorGeo(request) {
   }
 }
 
+// When a lead can't reach ENSO, the visitor sees an error but nobody at ENSO
+// would know. Post it to the intake error room (ENSO_INTAKE_ALERT_WEBHOOK, a
+// Google Chat webhook) with the contact details, so someone can follow up by
+// hand. Best effort: never throws, never delays the response for long.
+async function alertDeliveryFailure(lead, reason) {
+  const webhook = process.env.ENSO_INTAKE_ALERT_WEBHOOK;
+  if (!webhook) return;
+  const text = [
+    "⚠️ Website lead NOT delivered to the CRM",
+    `Site: ${lead.host || "?"}   Page: ${lead.url || "?"}`,
+    `Reason: ${reason}`,
+    `Lead: ${lead.name || "?"} · ${lead.phone || "no phone"} · ${lead.email || "no email"}`,
+    `submission_id: ${lead.submission_id || "?"}`,
+    "The visitor saw an error and may retry. If no lead with this submission_id appears in the CRM, add it by hand.",
+  ].join("\n");
+  try {
+    await fetch(webhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=UTF-8" },
+      body: JSON.stringify({ text }),
+      signal: AbortSignal.timeout(5000),
+    });
+  } catch (error) {
+    console.error("[lead] failure alert could not be sent", error);
+  }
+}
+
 export async function POST(request) {
   let body;
   try {
@@ -110,6 +137,10 @@ export async function POST(request) {
   const intakeSecret = process.env.ENSO_INTAKE_SECRET;
   if (!intakeUrl || !intakeSecret) {
     console.error("[lead] ENSO_INTAKE_URL or ENSO_INTAKE_SECRET is not set");
+    await alertDeliveryFailure(
+      { ...body, name },
+      "the site is missing ENSO_INTAKE_URL or ENSO_INTAKE_SECRET",
+    );
     return NextResponse.json({ error: "not_configured" }, { status: 500 });
   }
 
@@ -127,6 +158,7 @@ export async function POST(request) {
 
   // One retry on a network error or 5xx. ENSO deduplicates by submission_id,
   // so a retry never creates a second lead.
+  let lastFailure = "unknown";
   for (let attempt = 0; attempt < 2; attempt += 1) {
     try {
       const response = await fetch(intakeUrl, {
@@ -139,12 +171,15 @@ export async function POST(request) {
         signal: AbortSignal.timeout(10000),
       });
       if (response.ok) return NextResponse.json({ ok: true });
+      lastFailure = `the intake answered HTTP ${response.status}`;
       console.error(`[lead] intake answered ${response.status}`);
       if (response.status < 500) break;
     } catch (error) {
+      lastFailure = `the intake could not be reached (${String(error)})`;
       console.error("[lead] intake request failed", error);
     }
   }
 
+  await alertDeliveryFailure(payload, lastFailure);
   return NextResponse.json({ error: "delivery_failed" }, { status: 502 });
 }
