@@ -57,6 +57,32 @@ function clientIp(request) {
   );
 }
 
+// Netlify adds the visitor's location, looked up from their IP, to every
+// function request as base64 JSON. It replaces the city/country PostHog used
+// to supply, with no third-party lookup.
+function visitorGeo(request) {
+  const raw = request.headers.get("x-nf-geo");
+  if (!raw) return {};
+  try {
+    const geo = JSON.parse(Buffer.from(raw, "base64").toString("utf8"));
+    const fields = {
+      city: geo.city,
+      country: geo.country?.name || geo.country?.code,
+      region: geo.subdivision?.name,
+      postcode: geo.postal_code,
+      latitude: geo.latitude,
+      longitude: geo.longitude,
+    };
+    return Object.fromEntries(
+      Object.entries(fields).filter(
+        ([, value]) => value !== undefined && value !== null && value !== "",
+      ),
+    );
+  } catch {
+    return {};
+  }
+}
+
 export async function POST(request) {
   let body;
   try {
@@ -97,6 +123,7 @@ export async function POST(request) {
   if (ip) payload.ip = ip;
   const userAgent = request.headers.get("user-agent");
   if (userAgent) payload.user_agent = userAgent;
+  Object.assign(payload, visitorGeo(request));
 
   // One retry on a network error or 5xx. ENSO deduplicates by submission_id,
   // so a retry never creates a second lead.
