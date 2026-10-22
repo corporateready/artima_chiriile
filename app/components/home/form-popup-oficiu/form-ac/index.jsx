@@ -48,6 +48,10 @@ const Page = ({
     [isMobile],
   );
 
+  const [isSending, setIsSending] = React.useState(false);
+  const [sendError, setSendError] = React.useState(false);
+  const honeypotRef = React.useRef(null);
+
   const isSubmitDisabled =
     nameValue.length < 3 || !emailValue.includes("@") || phoneValue.length < 12;
 
@@ -58,7 +62,7 @@ const Page = ({
     };
 
   const handleSubmit = React.useCallback(
-  (event) => {
+  async (event) => {
     event.preventDefault();
 
     if (isSubmitDisabled) {
@@ -66,7 +70,18 @@ const Page = ({
       return;
     }
 
-    formSubmitTrack();
+    if (isSending) return;
+    setIsSending(true);
+    setSendError(false);
+
+    const delivered = await formSubmitTrack({
+      honeypot: honeypotRef.current?.value,
+    });
+    if (!delivered) {
+      setIsSending(false);
+      setSendError(true);
+      return;
+    }
 
     setTimeout(() => {
       clearForm();
@@ -80,7 +95,7 @@ const Page = ({
     router.replace("/");
     }, 2000);
   },
-  [isSubmitDisabled, formSubmitTrack, router],
+  [isSubmitDisabled, isSending, formSubmitTrack, router],
 );
 
   return (
@@ -176,16 +191,30 @@ const Page = ({
         </div>
         <input type="hidden" name="language" value={"ro"} />
 
+        <input
+          type="text"
+          name="contact_me_by_fax_only"
+          ref={honeypotRef}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-10000px", width: 1, height: 1, opacity: 0 }}
+        />
         <button
           id="_form_1_submit"
           className="inline-flex justify-center items-center text-[20rem] sm:text-[22rem] font-bold leading-[24rem] sm:leading-[31rem] text-white bg-[url('/sales/button_bg.png')] bg-cover bg-no-repeat mt-[26rem] sm:mt-[34rem] w-[354rem] sm:w-[454rem] h-[70rem] sm:h-[85rem] rounded-[48rem]"
           type="submit"
-          disabled={isSubmitDisabled}
+          disabled={isSubmitDisabled || isSending}
         >
           ACCESEAZĂ ACUM
           <br />
           PREZENTAREA PDF
         </button>
+        {sendError && (
+          <p role="alert" className="mt-[16rem] text-center text-[14rem] sm:text-[16rem] text-[#c0392b]">
+            Nu am putut trimite cererea. Încearcă din nou sau sună-ne.
+          </p>
+        )}
       </div>
     </form>
   );
